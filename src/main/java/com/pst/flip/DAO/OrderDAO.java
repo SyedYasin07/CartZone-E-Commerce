@@ -101,7 +101,7 @@ public class OrderDAO {
 		                o.setOrderStatus(rs.getString("order_status"));
 
 
-// or .toString() if your DTO uses String
+
 		                list.add(o);
 		            }
 		        }

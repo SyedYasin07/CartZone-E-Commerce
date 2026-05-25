@@ -102,11 +102,11 @@ for(OrderDTO o:orders){
 %>
 <tr>
 <td><%=o.getOrderId()%></td>
-<td><%=o.getProductName()%></td>
+<!-- <td><%=o.getProductName()%></td>
 <td><%=o.getAddress() %></td>
 <td><%=o.getPaymentMode() %></td>
 <td><%=o.getOrderStatus() %></td>
-<td><%=o.getOrderDate() %></td>
+<td><%=o.getOrderDate() %></td> -->
 <td>
     <a href="orderAction?action=view&id=<%=o.getOrderId()%>">
         👁️
