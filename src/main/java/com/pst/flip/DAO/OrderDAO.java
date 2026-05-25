@@ -1,20 +1,19 @@
 package com.pst.flip.DAO;
 
+import com.pst.flip.DTO.OrderDTO;
+import com.pst.util.DB.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.pst.flip.DTO.DBConnection;
-import com.pst.flip.DTO.OrderDTO;
-
 public class OrderDAO {
 		
 	
 		public void buy(OrderDTO orders) {
 			Connection con=DBConnection.getConnection();
-			String sql="insert into orders(user_Id,Address,Product_Id,Payment_Mode,order_status) values (?,?,?,?,?)";
+			String sql="insert into flip.orders(user_Id,Address,Product_Id,Payment_Mode,order_status) values (?,?,?,?,?)";
 			try {
 				PreparedStatement ps= con.prepareStatement(sql);
 //				ps.setInt(1, orders.getOrderId());
@@ -29,7 +28,7 @@ public class OrderDAO {
 			}
 		}
 		public void deleteOrder(int orderId) {
-		    String sql = "DELETE FROM orders WHERE order_id = ?";
+		    String sql = "DELETE FROM flip.orders WHERE order_id = ?";
 
 		    try (Connection con = DBConnection.getConnection();
 		         PreparedStatement ps = con.prepareStatement(sql)) {
@@ -46,8 +45,8 @@ public class OrderDAO {
 
 		    String sql = "SELECT o.order_id, p.name AS product_name,p.image AS product_image, o.Address, " +
 		                 "o.payment_mode, o.order_date, o.order_status " +
-		                 "FROM orders o " +
-		                 "JOIN products p ON o.product_id = p.id " +
+		                 "FROM flip.orders o " +
+		                 "JOIN flip.products p ON o.product_id = p.id " +
 		                 "WHERE o.order_id = ?";
 
 		    try (Connection con = DBConnection.getConnection();
@@ -80,8 +79,8 @@ public class OrderDAO {
 
 		    String sql =    "SELECT o.order_id, p.name AS product_name, o.Address, " +
 		    	    "o.payment_mode, o.order_date, o.order_status " +
-		    	    "FROM orders o " +
-		    	    "JOIN products p ON o.product_id = p.id " +
+		    	    "FROM flip.orders o " +
+		    	    "JOIN flip.products p ON o.product_id = p.id " +
 		    	    "WHERE o.user_id = ?";
 
 		    try (Connection con = DBConnection.getConnection();

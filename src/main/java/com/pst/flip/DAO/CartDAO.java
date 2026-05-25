@@ -1,7 +1,7 @@
 package com.pst.flip.DAO;
 
 import com.pst.flip.DTO.CartDTO;
-import com.pst.flip.DTO.DBConnection;
+import com.pst.util.DB.DBConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +12,7 @@ public class CartDAO {
 	public void addToCart(CartDTO cart) {
 		Connection con=DBConnection.getConnection();
 		
-		String sql="Insert into cart(user_id,product_id) VALUES (?,?)";
+		String sql="Insert into flip.cart(user_id,product_id) VALUES (?,?)";
 		try {
 			PreparedStatement ps =con.prepareStatement(sql);
 			ps.setInt(1, cart.getUserId());
@@ -24,7 +24,7 @@ public class CartDAO {
 		
 	}
 	public void deleteFromCart(int productId,int userId)  {
-		String sql= "Delete From cart where product_id=? AND user_id=?";
+		String sql= "Delete From flip.cart where product_id=? AND user_id=?";
 		try(Connection con=DBConnection.getConnection();
 				PreparedStatement ps=con.prepareStatement(sql)){
 			ps.setInt(1, productId);
@@ -39,12 +39,12 @@ public class CartDAO {
 
 	    List<CartDTO> list = new ArrayList<>();
 
-	    String sql = """
-	        SELECT p.id, p.name, p.price, p.image,p.category
-	        FROM cart c
-	        JOIN products p ON c.product_id = p.id
-	        WHERE c.user_id = ?
-	    """;
+	    String sql = 
+	        "SELECT p.id, p.name, p.price, p.image,p.category"+
+	        "FROM flip.cart c "+
+	        "JOIN flip.products p ON c.product_id = p.id"+
+	        "WHERE c.user_id = ?"
+	    ;
 
 	    try (Connection con = DBConnection.getConnection();
 	         PreparedStatement ps = con.prepareStatement(sql)) {
