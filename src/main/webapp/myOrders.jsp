@@ -5,11 +5,48 @@
 List<OrderDTO> orders = (List<OrderDTO>) request.getAttribute("orders");
 %>
 
-<h2 style="text-align:center;">📦 My Orders</h2>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>My Orders</title>
 
-<h3>DEBUG: <%= (orders == null ? "NULL" : orders.size()) %></h3>
+<style>
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f5f7fa;
+    padding: 20px;
+}
 
-<table border="2px">
+h2 {
+    text-align: center;
+}
+
+table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th {
+    background: #667eea;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>📦 My Orders</h2>
+
+<table border="1">
 
 <tr>
     <th>Order ID</th>
@@ -26,12 +63,11 @@ if (orders == null || orders.isEmpty()) {
 %>
 
 <tr>
-    <td colspan="7" style="color:red;">No Orders Found</td>
+    <td colspan="7">No Orders Found</td>
 </tr>
 
 <%
 } else {
-
     for (OrderDTO o : orders) {
 %>
 
@@ -44,8 +80,7 @@ if (orders == null || orders.isEmpty()) {
     <td><%= o.getOrderDate() %></td>
     <td>
         <a href="orderAction?action=view&id=<%=o.getOrderId()%>">👁️</a>
-        <a href="orderAction?action=delete&id=<%=o.getOrderId()%>"
-           onclick="return confirm('Are you sure?');">🗑️</a>
+        <a href="orderAction?action=delete&id=<%=o.getOrderId()%>">🗑️</a>
     </td>
 </tr>
 
@@ -55,3 +90,6 @@ if (orders == null || orders.isEmpty()) {
 %>
 
 </table>
+
+</body>
+</html>
