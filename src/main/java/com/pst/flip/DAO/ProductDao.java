@@ -228,7 +228,7 @@ return false;
 
         Flipkart_Dto p = null;
 
-        String sql = "SELECT * FROM products WHERE id=?";
+        String sql = "SELECT * FROM flip.products WHERE id=?";
 
         try(Connection con = DBConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(sql)) {

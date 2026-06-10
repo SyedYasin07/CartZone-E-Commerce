@@ -12,7 +12,7 @@ public class SellerDao {
 	public boolean registerSeller(SellerDto dto) {
 
 	    String sql =
-	    "INSERT INTO sellers(seller_name,email,phone,business_name,gst_number,address) VALUES(?,?,?,?,?,?)";
+	    "INSERT INTO flip.sellers(seller_name,email,phone,business_name,gst_number,address) VALUES(?,?,?,?,?,?)";
 
 	    try(Connection con = DBConnection.getConnection();
 	        PreparedStatement ps = con.prepareStatement(sql)) {
@@ -34,7 +34,7 @@ public class SellerDao {
 	}
 	public int getSellerIdByEmail(String email) {
 
-	    String sql = "SELECT seller_id FROM sellers WHERE email=?";
+	    String sql = "SELECT seller_id FROM flip.sellers WHERE email=?";
 
 	    try (Connection con = DBConnection.getConnection();
 	         PreparedStatement ps = con.prepareStatement(sql)) {
