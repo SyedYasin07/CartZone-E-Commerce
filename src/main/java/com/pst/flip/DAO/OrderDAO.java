@@ -50,12 +50,13 @@ public class OrderDAO {
 		public OrderDTO getOrderById(int orderId) {
 		    OrderDTO o = null;
 
-		    String sql = "SELECT o.order_id, p.name AS product_name, p.image AS product_image, " +
-		             "o.Address, o.payment_mode, o.order_date, o.order_status, " +
-		             "o.color, o.size, o.ram, o.storage, o.screen_size " +
-		             "FROM orders o " +
-		             "JOIN products p ON o.product_id = p.id " +
-		             "WHERE o.order_id = ?";
+		  String sql =
+"SELECT o.order_id, p.name AS product_name, p.image AS product_image, " +
+"o.Address, o.payment_mode, o.order_date, o.order_status, " +
+"o.color, o.size, o.ram, o.storage, o.screen_size " +
+"FROM orders o " +
+"LEFT JOIN products p ON o.product_id = p.id " +
+"WHERE o.order_id = ?";
 
 		    try (Connection con = DBConnection.getConnection();
 		         PreparedStatement ps = con.prepareStatement(sql)) {
@@ -90,11 +91,12 @@ public class OrderDAO {
 		public List<OrderDTO> getOrdersByUser(int userId) {
 		    List<OrderDTO> list = new ArrayList<>();
 
-		    String sql =    "SELECT o.order_id, p.name AS product_name, o.Address, " +
-		    	    "o.payment_mode, o.order_date, o.order_status " +
-		    	    "FROM orders o " +
-		    	    "JOIN products p ON o.product_id = p.id " +
-		    	    "WHERE o.user_id = ?";
+		    String sql =
+"SELECT o.order_id, p.name AS product_name, o.Address, " +
+"o.payment_mode, o.order_date, o.order_status " +
+"FROM orders o " +
+"LEFT JOIN products p ON o.product_id = p.id " +
+"WHERE o.user_id = ?";
 
 		    try (Connection con = DBConnection.getConnection();
 		         PreparedStatement ps = con.prepareStatement(sql)) {
