@@ -84,7 +84,7 @@
 <h2 style="text-align:center;">📦 My Orders</h2>
 <table border="2px">
 
-<%
+<!-- <%
 List<OrderDTO> orders=(List<OrderDTO>) request.getAttribute("orders");
 %>
 <tr>
@@ -106,7 +106,36 @@ for(OrderDTO o:orders){
 <td><%=o.getPaymentMode() %></td>
 <td><%=o.getOrderStatus() %></td>
 <td><%=o.getOrderDate() %></td>
-<td>
+<td> -->
+    <%
+List<OrderDTO> orders = (List<OrderDTO>) request.getAttribute("orders");
+%>
+
+<!-- TABLE HEADER -->
+<tr>
+    <th>Order ID</th>
+    <th>Product Name</th>
+    <th>Address</th>
+    <th>Payment</th>
+    <th>Status</th>
+    <th>Order Date</th>
+    <th>Actions</th>
+</tr>
+
+<%
+if (orders != null && !orders.isEmpty()) {
+
+    for (OrderDTO o : orders) {
+%>
+
+<tr>
+    <td><%= o.getOrderId() %></td>
+    <td><%= o.getProductName() %></td>
+    <td><%= o.getAddress() %></td>
+    <td><%= o.getPaymentMode() %></td>
+    <td><%= o.getOrderStatus() %></td>
+    <td><%= o.getOrderDate() %></td>
+    <td>
     <a href="orderAction?action=view&id=<%=o.getOrderId()%>">
         👁️
     </a>
