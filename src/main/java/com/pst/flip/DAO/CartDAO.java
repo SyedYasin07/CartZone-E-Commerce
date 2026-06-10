@@ -84,12 +84,11 @@ public class CartDAO {
 
 	    List<CartDTO> list = new ArrayList<>();
 
-	    String sql = """
-	        SELECT p.id, p.name, p.price, p.image,p.category,c.quantity
-	        FROM cart c
-	        JOIN products p ON c.product_id = p.id
-	        WHERE c.user_id = ?
-	    """;
+	   String sql =
+    "SELECT p.id, p.name, p.price, p.image, p.category, c.quantity " +
+    "FROM cart c " +
+    "JOIN products p ON c.product_id = p.id " +
+    "WHERE c.user_id = ?";
 
 	    try (Connection con = DBConnection.getConnection();
 	         PreparedStatement ps = con.prepareStatement(sql)) {
@@ -172,13 +171,11 @@ public class CartDAO {
 
 	    List<CartDTO> list = new ArrayList<>();
 
-	    String sql = """
-	        SELECT p.id,p.name,p.price,p.image,p.category
-	        FROM wishlist w
-	        JOIN products p
-	        ON w.product_id = p.id
-	        WHERE w.user_id = ?
-	    """;
+	  String sql =
+    "SELECT p.id, p.name, p.price, p.image, p.category " +
+    "FROM wishlist w " +
+    "JOIN products p ON w.product_id = p.id " +
+    "WHERE w.user_id = ?";
 
 	    try(Connection con = DBConnection.getConnection();
 	        PreparedStatement ps = con.prepareStatement(sql)){

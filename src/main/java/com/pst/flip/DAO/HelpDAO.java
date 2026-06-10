@@ -16,7 +16,7 @@ public class HelpDAO {
                     DBConnection.getConnection();
 
             String sql =
-            "insert into flip.help_tickets(user_id,issue_type,description,status) values(?,?,?,?)";
+            "insert into help_tickets(user_id,issue_type,description,status) values(?,?,?,?)";
 
             PreparedStatement ps =
                     con.prepareStatement(sql);

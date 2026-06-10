@@ -17,8 +17,8 @@ public class TrackDAO {
 
 	    String sql =    "SELECT o.order_id, p.name AS product_name, o.Address, " +
 	    	    "o.payment_mode, o.order_date, o.order_status " +
-	    	    "FROM flip.orders o " +
-	    	    "JOIN flip.products p ON o.product_id = p.id " +
+	    	    "FROM orders o " +
+	    	    "JOIN products p ON o.product_id = p.id " +
 	    	    "WHERE o.user_id = ?";
 
 	    try (Connection con = DBConnection.getConnection();
