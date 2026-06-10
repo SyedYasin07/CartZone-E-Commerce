@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.pst.flip.DTO.CartDTO;
-import com.pst.flip.DTO.DBConnection;
+import com.pst.util.DB.DBConnection;
 
 public class CartDAO {
 //	public void addToCart(CartDTO cart) {
