@@ -9,7 +9,7 @@ public class UpdateProduct {
 	public boolean updateProduct(int productId, String name, double price,
             String image, String category) {
 
-String sql = "UPDATE products SET name=?, price=?, image=?, category=? WHERE id=?";
+String sql = "UPDATE flip.products SET name=?, price=?, image=?, category=? WHERE id=?";
 
 try (Connection con = DBConnection.getConnection();
 PreparedStatement ps = con.prepareStatement(sql)) {

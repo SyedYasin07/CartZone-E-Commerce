@@ -9,7 +9,7 @@ public class DeleteProduct {
 	public boolean deleteProduct(int productId){
 
 	    String sql =
-	    "DELETE FROM products WHERE id=?";
+	    "DELETE FROM flip.products WHERE id=?";
 
 	    try(Connection con = DBConnection.getConnection();
 	        PreparedStatement ps =

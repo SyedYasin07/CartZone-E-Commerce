@@ -1,11 +1,13 @@
 package com.pst.flip.DAO;
 
-import com.pst.flip.DTO.Flipkart_Dto;
-import com.pst.util.DB.DBConnection;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.pst.flip.DTO.Flipkart_Dto;
+import com.pst.util.DB.DBConnection;
 
 public class ProductDao {
 
@@ -13,7 +15,7 @@ public class ProductDao {
         List<Flipkart_Dto> list = new ArrayList<>();
 
         try (Connection con = DBConnection.getConnection();
-             PreparedStatement ps = con.prepareStatement("SELECT * FROM products");
+             PreparedStatement ps = con.prepareStatement("SELECT * FROM flip.products");
              ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
@@ -43,7 +45,7 @@ public class ProductDao {
         List<Flipkart_Dto> list = new ArrayList<>();
 
         String sql =
-        "SELECT * FROM products WHERE seller_id=?";
+        "SELECT * FROM flip.products WHERE seller_id=?";
 
         try(Connection con = DBConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(sql)){
@@ -79,7 +81,7 @@ public class ProductDao {
     }
     public void addProduct(Flipkart_Dto dto) {
 
-        String sql = "INSERT INTO products(name, price, image, category, seller_id) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO flip.products(name, price, image, category, seller_id) VALUES(?,?,?,?,?)";
 
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
@@ -99,7 +101,7 @@ public class ProductDao {
     public boolean deleteProduct(int productId){
 
 	    String sql =
-	    "DELETE FROM products WHERE id=?";
+	    "DELETE FROM flip.products WHERE id=?";
 
 	    try(Connection con = DBConnection.getConnection();
 	        PreparedStatement ps =
@@ -118,7 +120,7 @@ public class ProductDao {
     public boolean updateProduct(int productId, String name, double price,
             String image, String category) {
 
-String sql = "UPDATE products SET name=?, price=?, image=?, category=? WHERE id=?";
+String sql = "UPDATE flip.products SET name=?, price=?, image=?, category=? WHERE id=?";
 
 try (Connection con = DBConnection.getConnection();
 PreparedStatement ps = con.prepareStatement(sql)) {
@@ -147,7 +149,7 @@ return false;
                 new ArrayList<>();
 
         String sql =
-        "SELECT * FROM products WHERE name LIKE ? OR category LIKE ?";
+        "SELECT * FROM flip.products WHERE name LIKE ? OR category LIKE ?";
 
         try(Connection con =
                 DBConnection.getConnection();
@@ -191,7 +193,7 @@ return false;
         List<Flipkart_Dto> list = new ArrayList<>();
 
         String sql =
-            "SELECT * FROM products WHERE category=?";
+            "SELECT * FROM flip.products WHERE category=?";
 
         try(Connection con = DBConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(sql)) {
@@ -228,7 +230,7 @@ return false;
 
         Flipkart_Dto p = null;
 
-        String sql = "SELECT * FROM products WHERE id=?";
+        String sql = "SELECT * FROM flip.products WHERE id=?";
 
         try(Connection con = DBConnection.getConnection();
             PreparedStatement ps = con.prepareStatement(sql)) {

@@ -14,7 +14,7 @@ public class OrderDAO {
 	
 		public void buy(OrderDTO orders) {
 			Connection con=DBConnection.getConnection();
-			String sql = "INSERT INTO orders(user_Id, Address, Product_Id, Payment_Mode, order_status, color, size, ram, storage, screen_size) VALUES (?,?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT INTO flip.orders(user_Id, Address, Product_Id, Payment_Mode, order_status, color, size, ram, storage, screen_size) VALUES (?,?,?,?,?,?,?,?,?,?)";
 			try {
 				PreparedStatement ps= con.prepareStatement(sql);
 //				ps.setInt(1, orders.getOrderId());
@@ -35,7 +35,7 @@ public class OrderDAO {
 			}
 		}
 		public void deleteOrder(int orderId) {
-		    String sql = "DELETE FROM orders WHERE order_id = ?";
+		    String sql = "DELETE FROM flip.orders WHERE order_id = ?";
 
 		    try (Connection con = DBConnection.getConnection();
 		         PreparedStatement ps = con.prepareStatement(sql)) {
@@ -53,8 +53,8 @@ public class OrderDAO {
 		    String sql = "SELECT o.order_id, p.name AS product_name, p.image AS product_image, " +
 		             "o.Address, o.payment_mode, o.order_date, o.order_status, " +
 		             "o.color, o.size, o.ram, o.storage, o.screen_size " +
-		             "FROM orders o " +
-		             "JOIN products p ON o.product_id = p.id " +
+		             "FROM flip.orders o " +
+		             "JOIN flip.products p ON o.product_id = p.id " +
 		             "WHERE o.order_id = ?";
 
 		    try (Connection con = DBConnection.getConnection();
@@ -92,8 +92,8 @@ public class OrderDAO {
 
 		    String sql =    "SELECT o.order_id, p.name AS product_name, o.Address, " +
 		    	    "o.payment_mode, o.order_date, o.order_status " +
-		    	    "FROM orders o " +
-		    	    "JOIN products p ON o.product_id = p.id " +
+		    	    "FROM flip.orders o " +
+		    	    "JOIN flip.products p ON o.product_id = p.id " +
 		    	    "WHERE o.user_id = ?";
 
 		    try (Connection con = DBConnection.getConnection();

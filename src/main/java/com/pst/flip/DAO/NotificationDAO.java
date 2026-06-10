@@ -20,7 +20,7 @@ public class NotificationDAO {
 	        Connection con = DBConnection.getConnection();
 
 	        String sql =
-	                "select * from notifications order by notification_id desc";
+	                "select * from flip.notifications order by notification_id desc";
 
 	        PreparedStatement ps =
 	                con.prepareStatement(sql);
