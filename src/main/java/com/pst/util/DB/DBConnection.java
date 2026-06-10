@@ -80,6 +80,7 @@ public class DBConnection {
             	);
 
             System.out.println("✅ MySQL DB connected successfully");
+            System.out.println("DB URL =" + con.getMetaData().getURL());
 
         } catch (ClassNotFoundException e) {
             System.err.println("❌ MySQL JDBC Driver not found");
