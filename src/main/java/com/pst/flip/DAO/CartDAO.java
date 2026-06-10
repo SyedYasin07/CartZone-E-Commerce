@@ -3,6 +3,7 @@ package com.pst.flip.DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class CartDAO {
 //	public void addToCart(CartDTO cart) {
 //		Connection con=DBConnection.getConnection();
 //		
-//		String sql="Insert into flip.cart(user_id,product_id) VALUES (?,?)";
+//		String sql="Insert into cart(user_id,product_id) VALUES (?,?)";
 //		try {
 //			PreparedStatement ps =con.prepareStatement(sql);
 //			ps.setInt(1, cart.getUserId());
@@ -29,7 +30,7 @@ public class CartDAO {
 	    try(Connection con = DBConnection.getConnection()) {
 
 	        String check =
-	        "SELECT quantity FROM flip.cart WHERE user_id=? AND product_id=?";
+	        "SELECT quantity FROM cart WHERE user_id=? AND product_id=?";
 
 	        PreparedStatement ps = con.prepareStatement(check);
 
@@ -41,7 +42,7 @@ public class CartDAO {
 	        if(rs.next()) {
 
 	            String update =
-	            "UPDATE flip.cart SET quantity=quantity+1 WHERE user_id=? AND product_id=?";
+	            "UPDATE cart SET quantity=quantity+1 WHERE user_id=? AND product_id=?";
 
 	            PreparedStatement ups = con.prepareStatement(update);
 
@@ -53,7 +54,7 @@ public class CartDAO {
 	        } else {
 
 	            String insert =
-	            "INSERT INTO flip.cart(user_id,product_id,quantity) VALUES(?,?,1)";
+	            "INSERT INTO cart(user_id,product_id,quantity) VALUES(?,?,1)";
 
 	            PreparedStatement ips = con.prepareStatement(insert);
 
@@ -68,7 +69,7 @@ public class CartDAO {
 	    }
 	}
 	public void deleteFromCart(int productId,int userId)  {
-		String sql= "Delete From flip.cart where product_id=? AND user_id=?";
+		String sql= "Delete From cart where product_id=? AND user_id=?";
 		try(Connection con=DBConnection.getConnection();
 				PreparedStatement ps=con.prepareStatement(sql)){
 			ps.setInt(1, productId);
@@ -83,11 +84,12 @@ public class CartDAO {
 
 	    List<CartDTO> list = new ArrayList<>();
 
-	   String sql =
-"SELECT p.id, p.name, p.price, p.image, p.category, c.quantity " +
-"FROM cart c " +
-"JOIN flip.products p ON c.product_id = p.id " +
-"WHERE c.user_id = ?";
+	    String sql = """
+	        SELECT p.id, p.name, p.price, p.image,p.category,c.quantity
+	        FROM cart c
+	        JOIN products p ON c.product_id = p.id
+	        WHERE c.user_id = ?
+	    """;
 
 	    try (Connection con = DBConnection.getConnection();
 	         PreparedStatement ps = con.prepareStatement(sql)) {
@@ -116,7 +118,7 @@ public class CartDAO {
 	public void increaseQuantity(int productId,int userId) {
 
 	    String sql =
-	    "UPDATE flip.cart SET quantity=quantity+1 WHERE product_id=? AND user_id=?";
+	    "UPDATE cart SET quantity=quantity+1 WHERE product_id=? AND user_id=?";
 
 	    try(Connection con=DBConnection.getConnection();
 	        PreparedStatement ps=con.prepareStatement(sql)) {
@@ -133,7 +135,7 @@ public class CartDAO {
 	public void decreaseQuantity(int productId,int userId) {
 
 	    String sql =
-	    "UPDATE flip.cart SET quantity=quantity-1 WHERE product_id=? AND user_id=? AND quantity>1";
+	    "UPDATE cart SET quantity=quantity-1 WHERE product_id=? AND user_id=? AND quantity>1";
 
 	    try(Connection con=DBConnection.getConnection();
 	        PreparedStatement ps=con.prepareStatement(sql)) {
@@ -150,7 +152,7 @@ public class CartDAO {
 	public boolean addToWishlist(int userId, int productId) {
 
 	    String sql =
-	        "INSERT INTO flip.wishlist(user_id, product_id) VALUES (?,?)";
+	        "INSERT INTO wishlist(user_id, product_id) VALUES (?,?)";
 
 	    try(Connection con = DBConnection.getConnection();
 	        PreparedStatement ps = con.prepareStatement(sql)) {
@@ -170,11 +172,13 @@ public class CartDAO {
 
 	    List<CartDTO> list = new ArrayList<>();
 
-	    String sql =
-"SELECT p.id, p.name, p.price, p.image, p.category " +
-"FROM flip.wishlist w " +
-"JOIN flip.products p ON w.product_id = p.id " +
-"WHERE w.user_id = ?";
+	    String sql = """
+	        SELECT p.id,p.name,p.price,p.image,p.category
+	        FROM wishlist w
+	        JOIN products p
+	        ON w.product_id = p.id
+	        WHERE w.user_id = ?
+	    """;
 
 	    try(Connection con = DBConnection.getConnection();
 	        PreparedStatement ps = con.prepareStatement(sql)){
@@ -205,7 +209,7 @@ public class CartDAO {
 	public boolean removeFromWishlist(int userId, int productId) {
 
 	    String sql =
-	        "DELETE FROM flip.wishlist WHERE user_id=? AND product_id=?";
+	        "DELETE FROM wishlist WHERE user_id=? AND product_id=?";
 
 	    try(Connection con = DBConnection.getConnection();
 	        PreparedStatement ps = con.prepareStatement(sql)) {

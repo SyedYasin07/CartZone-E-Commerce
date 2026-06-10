@@ -20,7 +20,7 @@ public class CustomerCareDAO {
                     DBConnection.getConnection();
 
             String sql =
-                    "insert into flip.customer_care(user_id,subject,message) values(?,?,?)";
+                    "insert into customer_care(user_id,subject,message) values(?,?,?)";
 
             PreparedStatement ps =
                     con.prepareStatement(sql);
@@ -50,7 +50,7 @@ public class CustomerCareDAO {
                     DBConnection.getConnection();
 
             String sql =
-                    "select * from flip.customer_care where user_id=? order by created_at desc";
+                    "select * from customer_care where user_id=? order by created_at desc";
 
             PreparedStatement ps =
                     con.prepareStatement(sql);
@@ -105,7 +105,7 @@ public class CustomerCareDAO {
                     DBConnection.getConnection();
 
             String sql =
-                    "select * from flip.customer_care order by created_at desc";
+                    "select * from customer_care order by created_at desc";
 
             PreparedStatement ps =
                     con.prepareStatement(sql);
@@ -156,7 +156,7 @@ public class CustomerCareDAO {
                     DBConnection.getConnection();
 
             String sql =
-                    "update flip.customer_care set status=? where ticket_id=?";
+                    "update customer_care set status=? where ticket_id=?";
 
             PreparedStatement ps =
                     con.prepareStatement(sql);

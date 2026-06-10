@@ -21,7 +21,7 @@ public class ReviewDAO {
                     DBConnection.getConnection();
 
             String sql =
-                    "insert into flip.reviews(product_id,user_id,rating,review_text) values(?,?,?,?)";
+                    "insert into reviews(product_id,user_id,rating,review_text) values(?,?,?,?)";
 
             PreparedStatement ps =
                     con.prepareStatement(sql);
@@ -54,7 +54,7 @@ public class ReviewDAO {
                     DBConnection.getConnection();
 
             String sql =
-                    "select * from flip.reviews where product_id=? order by review_date desc";
+                    "select * from reviews where product_id=? order by review_date desc";
 
             PreparedStatement ps =
                     con.prepareStatement(sql);
@@ -108,7 +108,7 @@ public class ReviewDAO {
                     DBConnection.getConnection();
 
             String sql =
-                    "select avg(rating) as avg_rating from flip.reviews where product_id=?";
+                    "select avg(rating) as avg_rating from reviews where product_id=?";
 
             PreparedStatement ps =
                     con.prepareStatement(sql);
@@ -142,7 +142,7 @@ public class ReviewDAO {
                     DBConnection.getConnection();
 
             String sql =
-                    "select count(*) as total from flip.reviews where product_id=?";
+                    "select count(*) as total from reviews where product_id=?";
 
             PreparedStatement ps =
                     con.prepareStatement(sql);
@@ -167,7 +167,7 @@ public class ReviewDAO {
     public boolean deleteReview(int reviewId) {
 
         String sql =
-        "delete from flip.reviews where review_id=?";
+        "delete from reviews where review_id=?";
 
         try {
 
