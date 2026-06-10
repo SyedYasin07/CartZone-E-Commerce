@@ -109,7 +109,9 @@ for(OrderDTO o:orders){
 <td> -->
     <%
 List<OrderDTO> orders = (List<OrderDTO>) request.getAttribute("orders");
+  
 %>
+<h3>Orders = <%= orders %></h3>
 
 <!-- TABLE HEADER -->
 <tr>
