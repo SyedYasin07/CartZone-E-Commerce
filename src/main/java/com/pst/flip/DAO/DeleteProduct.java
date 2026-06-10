@@ -3,7 +3,7 @@ package com.pst.flip.DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
-import com.pst.flip.DTO.DBConnection;
+import com.pst.util.DB.DBConnection;
 
 public class DeleteProduct {
 	public boolean deleteProduct(int productId){

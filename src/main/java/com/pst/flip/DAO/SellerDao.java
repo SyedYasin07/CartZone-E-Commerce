@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.pst.flip.DTO.DBConnection;
+import com.pst.util.DB.DBConnection;
 import com.pst.flip.DTO.SellerDto;
 
 
