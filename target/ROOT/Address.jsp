@@ -83,14 +83,21 @@ button:hover{
 <div class="address-box">
     <h2>📍 Delivery Address</h2>
 
-    <form action="payment" method="post">
-        <input type="hidden" name="productId" value="${productId}">
+   <form action="payment" method="post">
 
-        <label>Enter your full address</label>
-        <textarea name="address" placeholder="House No, Street, Area, City, State - Pincode" required></textarea>
+    <input type="hidden" name="productId" value="${productId}">
 
-        <button>Continue to Payment</button>
-    </form>
+    
+
+    <label>Enter your full address</label>
+
+    <textarea name="address"
+        placeholder="House No, Street, Area, City, State - Pincode"
+        required></textarea>
+
+    <button>Continue to Payment</button>
+
+</form>
 
     <div class="secure">🔒 Your address is safe with us</div>
 </div>

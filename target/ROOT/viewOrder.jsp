@@ -157,7 +157,40 @@ h2 {
         <span class="label">Product:</span>
         <span class="value"><%=o.getProductName()%></span>
     </div>
+    <% if (o.getColor() != null && !o.getColor().trim().isEmpty()) { %>
+<div class="detail">
+    <span class="label">Color:</span>
+    <span class="value"><%= o.getColor() %></span>
+</div>
+<% } %>
 
+<% if (o.getSize() != null && !o.getSize().trim().isEmpty()) { %>
+<div class="detail">
+    <span class="label">Size:</span>
+    <span class="value"><%= o.getSize() %></span>
+</div>
+<% } %>
+
+<% if (o.getRam() != null && !o.getRam().trim().isEmpty()) { %>
+<div class="detail">
+    <span class="label">RAM:</span>
+    <span class="value"><%= o.getRam() %></span>
+</div>
+<% } %>
+
+<% if (o.getStorage() != null && !o.getStorage().trim().isEmpty()) { %>
+<div class="detail">
+    <span class="label">Storage:</span>
+    <span class="value"><%= o.getStorage() %></span>
+</div>
+<% } %>
+
+<% if (o.getScreenSize() != null && !o.getScreenSize().trim().isEmpty()) { %>
+<div class="detail">
+    <span class="label">Screen Size:</span>
+    <span class="value"><%= o.getScreenSize() %></span>
+</div>
+<% } %>
     <div class="detail">
         <span class="label">Address:</span>
         <span class="value"><%=o.getAddress()%></span>

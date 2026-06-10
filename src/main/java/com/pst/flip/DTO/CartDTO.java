@@ -10,8 +10,15 @@ public class CartDTO {
     private double price;
     private String image;
     private String catageory;
+    private int quantity;
 
-    public String getCatageory() {
+    public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public String getCatageory() {
 		return catageory;
 	}
 	public void setCatageory(String catageory) {
@@ -35,7 +42,7 @@ public class CartDTO {
 	@Override
 	public String toString() {
 		return "CartDTO [userId=" + userId + ", productId=" + productId + ", name=" + name + ", price=" + price
-				+ ", image=" + image + ", catageory=" + catageory + "]";
+				+ ", image=" + image + ", catageory=" + catageory + ", quantity=" + quantity + " ]";
 	}
     
 }

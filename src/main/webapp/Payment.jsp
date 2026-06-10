@@ -139,9 +139,32 @@ function verifyOTP(){
 
 <!-- COD -->
 <form action="OrderController" method="post">
-    <input type="hidden" name="productId" value="${productId}">
+
+    <input type="hidden" name="productId"
+           value="<%= session.getAttribute("productId") %>">
+
+    <input type="hidden" name="address"
+           value="<%= session.getAttribute("address") %>">
+
+    <input type="hidden" name="color"
+           value="<%= session.getAttribute("color") %>">
+
+    <input type="hidden" name="size"
+           value="<%= session.getAttribute("size") %>">
+
+    <input type="hidden" name="ram"
+           value="<%= session.getAttribute("ram") %>">
+
+    <input type="hidden" name="storage"
+           value="<%= session.getAttribute("storage") %>">
+
+    <input type="hidden" name="screenSize"
+           value="<%= session.getAttribute("screenSize") %>">
+
     <input type="hidden" name="payment" value="COD">
+
     <button type="submit">Cash On Delivery</button>
+
 </form>
 
 
@@ -178,8 +201,17 @@ function verifyOTP(){
 
 <!-- Final Submit -->
 <form id="finalForm" action="OrderController" method="post">
-    <input type="hidden" name="productId" value="${productId}">
+
+    <input type="hidden" name="productId"
+           value="<%= session.getAttribute("productId") %>">
+
+    <input type="hidden" name="address"
+           value="<%= session.getAttribute("address") %>">
+
+    
+
     <input type="hidden" name="payment" value="Online">
+
 </form>
 
 

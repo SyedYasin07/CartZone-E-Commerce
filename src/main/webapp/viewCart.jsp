@@ -176,33 +176,55 @@ if (cart == null || cart.isEmpty()) {
             <th>#</th>
             <th>Product</th>
             <th>Price</th>
+            <th>Quantity</th>
             <th>Image</th>
             <th>Category</th>
             <th>Checkout</th>
+            <th>Subtotal</th>
         </tr>
     </thead>
     <tbody>
 <%
 int i = 1;
+double total = 0;
 for (CartDTO c : cart) {
+	total+=c.getPrice() * c.getQuantity();
 %>
         <tr>
             <td><%= i++ %></td>
             <td><%= c.getName() %></td>
             <td class="price">₹ <%= c.getPrice() %></td>
             <td>
+    <a href="cartAction?action=decrease&id=<%=c.getProductId()%>">➖</a>
+
+    <b><%= c.getQuantity() %></b>
+
+    <a href="cartAction?action=increase&id=<%=c.getProductId()%>">➕</a>
+</td>
+            <td>
                 <img src="<%= c.getImage() %>" alt="Product Image">
             </td>
             <td><%= c.getCatageory() %></td>
             <td>
     
-    <form action="buy" method="post" style="display:inline;">
-        <input type="hidden" name="productId" value="<%=c.getProductId()%>">
-        <button style="border:none; background:none; cursor:pointer;" title="Buy">
-            🛒
-        </button>
-    </form>
+   <form action="productDetails.jsp" method="get" style="display:inline;">
 
+    <input type="hidden"
+           name="id"
+           value="<%=c.getProductId()%>">
+
+    <button
+        style="background:#fb641b;
+               color:white;
+               border:none;
+               border-radius:5px;
+               cursor:pointer;">
+
+        Buy Now
+
+    </button>
+
+</form>
     <!-- DELETE BUTTON -->
     <a href="cartAction?action=delete&id=<%=c.getProductId()%>"
        onclick="return confirm('Remove this item?');"
@@ -210,17 +232,17 @@ for (CartDTO c : cart) {
         🗑️
     </a>
 </td>
+   <td>₹ <%= c.getPrice() * c.getQuantity() %></td>
         </tr>
 <%
 }
 %>
     </tbody>
 </table>
+<h2>
+    Grand Total : ₹ <%= total %>
+</h2>
 
-<div class="actions">
-    <a class="btn btn-shop" href="intro.jsp">← Continue Shopping</a>
-    <a class="btn btn-checkout" href="Payment.jsp">Proceed to Checkout →</a>
-</div>
 
 <%
 }

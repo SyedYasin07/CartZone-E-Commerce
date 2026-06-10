@@ -15,16 +15,55 @@ public class OrderDTO {
     private int ProductId;
     private String PaymentMode;
     private String productImage;
+    private String color;
+    private String size;
+    private String ram;
+    private String storage;
+    private String screenSize;
     	
 
-    @Override
-	public String toString() {
-		return "OrderDTO [orderId=" + orderId + ", orderDate=" + orderDate + ", orderStatus=" + orderStatus
-				+ ", productName=" + productName + ", UserId=" + UserId + ", ProductId=" + ProductId + ", PaymentMode="
-				+ PaymentMode +",  productImage=" + productImage + "]";
+    public String getColor() {
+		return color;
 	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public String getSize() {
+		return size;
+	}
+	public void setSize(String size) {
+		this.size = size;
+	}
+	public String getRam() {
+		return ram;
+	}
+	public void setRam(String ram) {
+		this.ram = ram;
+	}
+	public String getStorage() {
+		return storage;
+	}
+	public void setStorage(String storage) {
+		this.storage = storage;
+	}
+	public String getScreenSize() {
+		return screenSize;
+	}
+	public void setScreenSize(String screenSize) {
+		this.screenSize = screenSize;
+	}
+	
+	
 	public int getOrderId() {
 		return orderId;
+	}
+	
+	@Override
+	public String toString() {
+		return "OrderDTO [orderId=" + orderId + ", address=" + address + ", orderDate=" + orderDate + ", orderStatus="
+				+ orderStatus + ", productName=" + productName + ", UserId=" + UserId + ", ProductId=" + ProductId
+				+ ", PaymentMode=" + PaymentMode + ", productImage=" + productImage + ", color=" + color + ", size="
+				+ size + ", ram=" + ram + ", storage=" + storage + ", screenSize=" + screenSize + "]";
 	}
 	public void setOrderId(int orderId) {
 		this.orderId = orderId;

@@ -87,7 +87,6 @@
 <%
 List<OrderDTO> orders=(List<OrderDTO>) request.getAttribute("orders");
 %>
-<!-- <h1>Orders Size = <%= orders.size() %></h1> -->
 <tr>
 	<th>Order ID</th>
     <th>Product Name</th>

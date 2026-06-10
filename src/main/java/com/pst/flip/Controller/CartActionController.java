@@ -26,6 +26,15 @@ public class CartActionController extends HttpServlet {
 			int userId=1;
 			dao.deleteFromCart(id, userId);
 			response.sendRedirect("viewCart");
+		}else if("increase".equals(action)) {
+			int userId=1;
+			dao.increaseQuantity(id, userId);
+			response.sendRedirect("viewCart");
+			
+		}else if("decrease".equals(action)) {
+			int userId=1;
+			dao.decreaseQuantity(id, userId);
+			response.sendRedirect("viewCart");
 		}
 	}
 

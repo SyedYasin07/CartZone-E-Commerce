@@ -273,77 +273,124 @@
         transform: scale(1.05);
         box-shadow: 0 4px 8px black;
     }
-    footer{
-    background-color:#172337;
-    color:white;
-    padding:40px 20px 10px 20px;
-    font-family: Arial,sans-serif;
-    font-size:14px;
-    }
-    .fc{
-    max-width:1200px;
-    margin:auto;
-    }
-    .fl{
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    border-bottom: 1px solid #454d5a;
-    padding-bottom:30px;
-    }
-    .fl div{
-    flex:1;
-    min-width:200px;
-    margin-bottom:20px;
-    }
-    .fl h3{
-    color:#878787;
-    margin-bottom:10px;
-    font-size:14px;
-    }
-    .fl a{
-    display: block;
-    color:white;
-    text-decoration:none;
-    margin:4px 0;
-    transition:0.3s;
-    }
-    .fl a:hover{
-    color:#ffc107;
-    }
-    .fa{
-    display:flex;
-    flex-wrap: wrap;
+   footer{
+    background: #172337;
+    color: white;
+    padding: 40px 50px 20px;
+}
+
+.fc{
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 30px;
+}
+
+.fl{
+    display: flex;
     justify-content: space-between;
-    margin-top:30px;
-    color:#fff;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.fl div{
+    display: flex;
+    flex-direction: column;
+}
+
+.fl h3{
+    color: #878787;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.fl a{
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.fl a:hover{
+    text-decoration: underline;
+}
+
+.fa{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 35px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.fa div{
+    flex: 1;
+    min-width: 300px;
+}
+
+.fa h3{
+    color: #878787;
+    margin-bottom: 15px;
+}
+
+.fa p{
+    margin: 3px 0;
+    line-height: 1.5;
+}
+
+.fa a{
+    color: #6a1bff;
+}
+
+.fb{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+.fb p{
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.fb img{
+    width: 40px;
+    height: auto;
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+    footer{
+        padding: 30px 20px;
     }
-    .fa > div{
-    flex:1;
-    min-width:250px;
-    margin:10px 0;
+
+    .fa{
+        flex-direction: column;
+        text-align: center;
     }
-    .fa h3{
-    color:#878787;
-    margin-bottom:10px;
+
+    .fl{
+        flex-direction: column;
+        text-align: center;
     }
+
     .fb{
-    text-align:center;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-top:30px;
-    border-top:1px solid #454d5e;
-    padding-top:20px;
+        flex-direction: column;
+        gap: 10px;
     }
+
     .fb p{
-    margin-bottom: 0 20px 10px;
+        margin-right: 0;
     }
+
     .fb img{
-    width:40px;
-    margin:0 5px;
-    vertical-align:middle;
+        width: 35px;
     }
+}
           @media (max-width: 480px) {
     .logo {
         flex-direction: row;
@@ -363,12 +410,27 @@
     .flip-text span {
         font-size: 12px;
     }
+    .box{
+     width:100%;
+      justify-content:center; 
+     }
 
     .box input {
         width: 100%;
         max-width: 180px;
         font-size: 14px;
     }
+    .search-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 22px;
+    color: blue;
+}
 
     nav {
         flex-direction: column;
@@ -388,6 +450,13 @@
     nav ul li a {
         font-size: 14px;
     }
+}
+.cart-dropdown{
+    position:relative;
+}
+
+.cart-dropdown:hover .dropdown-menu{
+    display:block;
 }
 .button-container {
     display: flex;
@@ -438,7 +507,52 @@
 .account-dropdown {
     position: relative;
 }
+.cart-dropdown{
+    position: relative;
+}
 
+.cart-dropdown:hover .dropdown-menu2{
+    display: block;
+}
+.dropdown-menu2 {
+    position: absolute;
+    top: 100%;
+    right: 0;          /* align with right side */
+    left: auto;        /* remove left alignment */
+
+    background: white;
+    min-width: 180px;
+
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+
+    padding: 8px 0;
+    display: none;
+    z-index: 999;
+}
+.dropdown-menu2 li{
+    list-style:none;
+}
+
+.dropdown-menu2 li a{
+    display:block;
+    padding:12px 18px;
+    color:#333;
+    text-decoration:none;
+    font-size:15px;
+    transition:0.3s;
+}
+
+.dropdown-menu2 li a:hover{
+    background:#f5f5f5;
+    color:#2874f0;
+}
+
+.dropdown-menu li a{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
 
 
 
@@ -473,8 +587,191 @@
 .account-dropdown:hover .dropdown-menu {
     display: block;
 }
+.seller-dropdown {
+    position: relative;
+}
+
+/* show dropdown on hover */
+.seller-dropdown:hover .dropdown-menu2 {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 999;
+}
+@media screen and (max-width:1024px){
+
+    .container,
+    .box2,
+    .box3,
+    .box4,
+    .box5{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .card,
+    .Tv,
+    .Mobile,
+    .Watches,
+    .Buds{
+        width:45%;
+    }
+}
 
 
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+@media screen and (max-width:768px){
+
+    nav{
+        position:relative;
+        height:auto;
+        padding:15px;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .logo{
+        width:100%;
+        justify-content:center;
+    }
+
+    .box{
+        width:100%;
+        justify-content:center;
+    }
+
+    .box input{
+        width:100%;
+        max-width:100%;
+    }
+
+    nav ul{
+        width:100%;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .categories{
+        margin-top:0;
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .categories a{
+        width:80px;
+        font-size:14px;
+        margin-top:0;
+    }
+
+    .categories img{
+        width:60px;
+        height:60px;
+        object-fit:contain;
+        margin:auto;
+    }
+
+    .container,
+    .box2,
+    .box3,
+    .box4,
+    .box5{
+        flex-direction:column;
+        align-items:center;
+        padding:10px;
+    }
+
+    .card,
+    .Tv,
+    .Mobile,
+    .Watches,
+    .Buds{
+        width:95%;
+        max-width:350px;
+    }
+
+    .button-container{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .button-container form{
+        width:100%;
+    }
+
+    .button-container button{
+        width:100%;
+    }
+
+    img{
+        max-height:none;
+    }
+
+    .fa{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .fl{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .fb{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .fb img{
+        width:35px;
+    }
+}
+
+
+/* ===========================
+   SMALL MOBILE
+=========================== */
+@media screen and (max-width:480px){
+
+    h1{
+        font-size:24px;
+    }
+
+    .card p,
+    .Tv p,
+    .Mobile p,
+    .Watches p,
+    .Buds p{
+        font-size:16px;
+    }
+
+    nav ul li a{
+        font-size:14px;
+    }
+
+    .account-link{
+        font-size:14px;
+    }
+
+    .dropdown-menu,
+    .dropdown-menu2{
+        min-width:150px;
+    }
+}
+.more-dropdown{
+    position:relative;
+}
+
+.more-dropdown:hover .dropdown-menu2{
+    display:block;
+}
 
 </style>
 </head>
@@ -486,8 +783,7 @@
             <p>Flipkart <span>plus</span></p>
         </div>
 
-       <div class="box"><input type="text" placeholder="Search Product & More." id="search">
-        <i class="fa-solid fa-magnifying-glass"></i></div>
+     <form action="searchProduct" method="get"> <div class="box"> <input type="text" name="keyword" placeholder="Search Product & More..." id="search"> <button type="submit" style="border:none;background:none;cursor:pointer;"> <i class="fa-solid fa-magnifying-glass"></i> </button> </div> </form>
         <ul>
        
    
@@ -497,16 +793,73 @@
         <i class="fa-solid fa-caret-down"></i>
     </a>
     <ul class="dropdown-menu">
-        <li><a href="myOrders">My Orders</a></li>
-        <li><a href="viewCart">My Cart</a></li>
+       <li><a href="myOrders">📦 My Orders</a></li>
+
+<li><a href="viewCart">🛒 My Cart</a></li>
     </ul>
 </li>
 
 		
 
-          <li><a href="#">Become a Seller</a></li>
-          <li><a href="#">More</a></li>
-          <li><a href="#">Add To Cart</a></li>
+          <li class="seller-dropdown">
+
+    <a href="#" class="account-link">
+        Become a Seller
+        <i class="fa-solid fa-caret-down"></i>
+    </a>
+
+    <ul class="dropdown-menu2">
+
+        <li><a href="sellerRegister.jsp">📝 Seller Register</a></li>
+
+        <li><a href="sellerLogin.jsp">🔐 Seller Login</a></li>
+
+        <li><a href="sellerDashboard.jsp">🏪 Seller Dashboard</a></li>
+
+    </ul>
+
+</li>
+         <li class="more-dropdown">
+
+    <a href="#" class="account-link">
+        More
+        <i class="fa-solid fa-caret-down"></i>
+    </a>
+
+    <ul class="dropdown-menu2">
+
+        <li><a href="notifications">🔔 Notifications</a></li>
+
+        <li><a href="reviews">⭐ Product Reviews</a></li>
+
+        <li>
+    <a href="customerCare">
+        🎧 Customer Care
+    </a>
+</li>
+
+        <li><a href="trackOrders">🚚 Track Order</a></li>
+
+        <li><a href="helpCenter.jsp">❓ Help Center</a></li>
+
+        <li><a href="contact.jsp">📧 Contact Us</a></li>
+
+    </ul>
+
+</li>
+         
+  <li class="cart-dropdown">
+    <a href="viewWishlist" class="account-link">
+        🛒 Cart
+        <i class="fa-solid fa-caret-down"></i>
+    </a>
+
+    <ul class="dropdown-menu2">
+        <li><a href="viewCart">🛒 View Cart</a></li>
+        <li><a href="viewWishlist">❤️ Wishlist</a></li>
+        <li><a href="myOrders">📦 Orders</a></li>
+    </ul>
+</li>
         </ul>
     </nav>
     
@@ -533,330 +886,432 @@
             </div>
 <img src="images/flip.png" alt="interact">
 <div class="container">
-    <div class="card">
+    <div class="card"  onclick="location.href='productDetails.jsp?id=1'">
         <img src="https://rukminim1.flixcart.com/image/312/312/l4rd0280/t-shirt/l/n/s/s-402a-austiz-original-imagfh4fmsjbsy69.jpeg?q=70" alt="w">
         <p>Printed Round Neck</p>
         <p>₹999</p>
         <div class="button-container">
-   <form action="buy" method="post">
-        <input type="hidden" name="productId" value="1">
-        <button class="b1">BUY</button>
+    <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="1">
       </form>
   <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="1">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="1">
+    <button type="submit">❤️ Wishlist</button>
+</form>
 </div>
 
     </div>
-    <div class="card">
+    <div class="card" onclick="location.href='productDetails.jsp?id=2'">
         <img src="https://rukminim1.flixcart.com/image/312/312/l4rd0280/t-shirt/c/y/x/m-408a-austiz-original-imagfh43wzj6hvyv.jpeg?q=70" alt="y">
         <p>Printed Round Neck T-shirt</p>
         <p>₹899</p>
         <div class="button-container">
-       <form action="buy" method="post">
-        <input type="hidden" name="productId" value="2">
-        <button class="b1">BUY</button>
+      <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="2">
       </form>
    <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="2">
         <button class="b2">ADD TO CART</button>
+        
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="2">
+    <button type="submit">❤️ Wishlist</button>
+</form>
 </div>
 
     </div>
-    <div class="card">
+    <div class="card" onclick="location.href='productDetails.jsp?id=3'">
         <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQXbSgPQdhSMlrxUBc-1dIxciPpuYP_bdcwiMpVC_iue2-8N4FPXDE3oc3cRg5mPpVY7cKtV8AnMlz1kQXoSvk-2v1s6rN8BHAAkoNtU5dc3dcjtOsbY68eSw" alt="w">
         <p>Allen Solly Men's Printed Slim Fit Shirt</p>
         <p>₹763</p>
        <div class="button-container">
-       <form action="buy" method="post">
-        <input type="hidden" name="productId" value="3">
-        <button class="b1">BUY</button>
+       <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="3">
       </form>
   <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="3">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="3">
+    <button type="submit">❤️ Wishlist</button>
+</form>
 </div>
 
     </div>
-    <div class="card">
+    <div class="card" onclick="location.href='productDetails.jsp?id=4'">
         <img src="https://rukminim1.flixcart.com/image/312/312/xif0q/t-shirt/e/r/9/xl-st-smartees-pocket-black-smartees-original-imagh8ctwfczgdcx.jpeg?q=70" alt="b">
         <p>Printed Round Neck</p>
         <p>₹549</p>
        <div class="button-container">
-       <form action="buy" method="post">
-        <input type="hidden" name="productId" value="4">
-        <button class="b1">BUY</button>
+        <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="1">
       </form>
     <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="4">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="4">
+    <button type="submit">❤️ Wishlist</button>
+</form>
 </div>
 
     </div>
     </div>
     <div class="box2">
-        <div class="Tv">
+        <div class="Tv" onclick="location.href='productDetails.jsp?id=5'">
         <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTmYfe28EaNPZRTAJYIpI7c4Y_tYC5hi5G2eckbE854PLqnGB48SaFtBOuMogFYf3vMgTEifeEbHAZqWGfQcYA09lMMyTcZlsUAQZq4yx0mWTbuhUN2SCrD" alt="samsung">
         <p>Samsung Crystal iSmart 4K Ultra HD Smart LED TV</p>
         <p>₹47,990</p>
        <div class="button-container">
-      <form action="buy" method="post">
-        <input type="hidden" name="productId" value="5">
-        <button class="b1">BUY</button>
+       <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="5">
       </form>
    <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="5">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="5">
+    <button type="submit">❤️ Wishlist</button>
+</form>
 </div>
 </div>
 
-    <div class="Tv">
+    <div class="Tv" onclick="location.href='productDetails.jsp?id=6'">
         <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQUo7RwJgye6ppHR1zoCAcsBW9H8I5LLRehQDcsUclyie4FmvnyGCO8D4IeJMpCzYo8EncHanTgASH18FdiRUq_NCJoEuyT_8ojKJYdCY4" alt="realme">
         <p>Realme Techlife Cinesonic 80 Cm 32 Inch Qled Hd Ready Smart Google Tv </p>
         <p>₹8,999</p>
         <div class="button-container">
-       <form action="buy" method="post">
-        <input type="hidden" name="productId" value="6">
-        <button class="b1">BUY</button>
+       <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="6">
       </form>
   <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="6">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="6">
+    <button type="submit">❤️ Wishlist</button>
+</form>
 </div>
 
     </div>
-    <div class="Tv">
+    <div class="Tv" onclick="location.href='productDetails.jsp?id=7'">
         <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSFEBqbuXPFzz_agMhAmtW7o1BAGw96ssc5sB6_6tVe5B_gtCfC2rb6WEi5Mm-yZsYzAPInmCKHnX-SXTqCgTdG_JKpoiyaI8TyeMYIV8k6UnUyI_Tl8j1T" alt="lg">
         <p>LG UR75 Series 4K Ultra HD Smart LED TV</p>
         <p> ₹29,990</p>
         <div class="button-container">
-      <form action="buy" method="post">
-        <input type="hidden" name="productId" value="7">
-        <button class="b1">BUY</button>
+      <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="7">
       </form>
    <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="7">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="7">
+    <button type="submit">❤️ Wishlist</button>
+</form>
 </div>
 
     </div>
-    <div class="Tv">
+    <div class="Tv" onclick="location.href='productDetails.jsp?id=8'">
         <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSVo2WpA8BWpZKfQnEfgnpwTJi43FH1-hrS-Sl2Vmlecm2CysSdewdR4OkoVq7MzVFT9rrrfEs8ICrzfCY8NlTwfQrcpIcs8VZ-hp4VC9PtLyEKQ38ZPskceA" alt="Sony">
         <p>Sony Bravia KD-50X64L 4k Ultra HD Smart LED</p>
         <p>₹35,590</p>
 <div class="button-container">
-      <form action="buy" method="post">
-        <input type="hidden" name="productId" value="8">
-        <button class="b1">BUY</button>
+       <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="8">
       </form>
    <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="8">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="8">
+    <button type="submit">❤️ Wishlist</button>
+</form>
 </div>
 
     </div>
 </div>
 <div class="box3">
-        <div class="Mobile">
+        <div class="Mobile"  onclick="location.href='productDetails.jsp?id=9'">
         <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQfUjIJKZggue3C2k4dNNgcaymyDkqVn70sxiYgCGt9AGPhBLt3jJGs6-saYcB9E1jt9h7Kvxiy6bm9BNKkPG0vdSUa1GCEcKa7YSZb-Tju" alt="Realme">
         <p>Realme P3x 5G</p>
         <p> ₹11,999</p>
    <div class="button-container">
-   <form action="buy" method="post">
-        <input type="hidden" name="productId" value="9">
-        <button class="b1">BUY</button>
-        </form>
+   <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="9">
+      </form>
      <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="9">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="9">
+    <button type="submit">❤️ Wishlist</button>
+</form>
 </div>
     </div>
-        <div class="Mobile">
+        <div class="Mobile" onclick="location.href='productDetails.jsp?id=10'">
         <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRrPnf2VYkna34m_JY4eNgJc-NF_NyeZOfAUft3_1Y5CusQpPXGx0dB8bnR0tA9mk-oGIImG18_BznCmV_xke8V0Yvqy-ZC_RQ4VAkiLUAj" alt="Poco">
         <p>Poco F6 5G</p>
         <p>₹23,999</p>
         <div class="button-container">
-              <form action="buy" method="post">
-        <input type="hidden" name="productId" value="10">
-        <button class="b1">BUY</button>
+         <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="10">
       </form>
           <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="10">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="10">
+    <button type="submit">❤️ Wishlist</button>
+</form>
         </div>
     </div>
 
-    <div class="Mobile">
+    <div class="Mobile" onclick="location.href='productDetails.jsp?id=11'">
         <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSFuAft-aY4CjM0kE-ljn4thbRo30WNHbSI64GDfx_C2cDvLBah9WvPl90FuRx-Jg8vcqFmhCUfh6XeR7vps_dT2-M3CrsZgjZe8N3l6Y4" alt="vivo">
         <p>Vivo T4 5G</p>
         <p>₹21,999</p>
         <div class="button-container">
-              <form action="buy" method="post">
-        <input type="hidden" name="productId" value="11">
-        <button class="b1">BUY</button>
+              <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="11">
       </form>
            <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="11">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="11">
+    <button type="submit">❤️ Wishlist</button>
+</form>
         </div>
     </div>
 
-    <div class="Mobile">
+    <div class="Mobile" onclick="location.href='productDetails.jsp?id=12'">
         <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSzIKShfxmasLUcJ7xgJ7gm5Qu0Rhjz5t1MqEx-VwlnUaAt6G96fJdBW_d-09OfMjXWKhSBU8bvQeTec2R6Y8m8u1vefAiobx6LPaGxSms" alt="iphone">
         <p>Apple iPhone 16 Plus</p>
         <p>₹84,900</p>
         <div class="button-container">
-              <form action="buy" method="post">
-        <input type="hidden" name="productId" value="12">
-        <button class="b1">BUY</button>
+              <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="12">
       </form>
            <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="12">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="12">
+    <button type="submit">❤️ Wishlist</button>
+</form>
         </div>
     </div>
 </div>
 
-<div class="box4">
-    <div class="Watches">
+<div class="box4" >
+    <div class="Watches" onclick="location.href='productDetails.jsp?id=13'">
         <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS8nUCu3VSungzgsycwziq0NWTrvlqx6NJIfeY_Rpw13kYq5hIQEscyVFU_RJ7Np3avxt2_N3R4gjx_cZTANlxmOcm1MC1GIZAbwNZrCKWb" alt="Rolex">
         <p>Rolex Overfly Silver Gold Quartz Chain</p>
         <p>₹3,064</p>
         <div class="button-container">
-               <form action="buy" method="post">
-        <input type="hidden" name="productId" value="13">
-        <button class="b1">BUY</button>
+               <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="13">
       </form>
           <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="13">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="13">
+    <button type="submit">❤️ Wishlist</button>
+</form>
         </div>
     </div>
 
-    <div class="Watches">
-        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTuAbZgsdc3eKhncWpqlj3tiqSJCP5FLlZ5ZV81cUmYR9cZCVufguLgtflIoK1gfx9MH5zKD3t1w6qxeXv7v4HAhUUP-_qxx3LhOEcC-EI-G0UjnlOeSCel" alt="Titan">
+    <div class="Watches" onclick="location.href='productDetails.jsp?id=14'">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQkPgU4BoshCubbve15dc0Ilxn3cLNnPbMXb9Y6pPmhSvos8P1EjvqHpKaYCnBO8TlUAQZuM-I26M1qm7slWNTIOrLz7LQRu2X9CFW1HPS96Vhk_fbB7vcl" alt="Titan">
         <p>Titan Men's Neo Splash Analog Watch</p>
         <p>₹7,295</p>
         <div class="button-container">
-              <form action="buy" method="post">
-        <input type="hidden" name="productId" value="14">
-        <button class="b1">BUY</button>
+         <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="14">
       </form>
            <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="14">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="14">
+    <button type="submit">❤️ Wishlist</button>
+</form>
         </div>
     </div>
 
-    <div class="Watches">
-        <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSRcjD5BAZVZ7-yCfn7TBZkUoCqFg5P28ekHC2AbcfyECe8brhRAq9_n8yCxjZRxjxZDslhn3yuTHRKkzmEH-maYDVmIJHZhkt97HoeOTksn0RkgQgmJZ5r" alt="Timex">
+    <div class="Watches" onclick="location.href='productDetails.jsp?id=15'">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcREjtqhZiys-IAN3r5uLi1b5odCfSdp1xJ2joh3t4LLIByGV6m4MVFqbDW5Eyp2ti8CiLHYXWvBLNoYKla1t-oOo6_xNBEXF8w3y6xYmpDf6FfC_DUjS5gNsw" alt="Timex">
         <p>Timex Men's Analog Black Dial Watch</p>
         <p>₹1,399</p>
         <div class="button-container">
-              <form action="buy" method="post">
-        <input type="hidden" name="productId" value="15">
-        <button class="b1">BUY</button>
+               <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="15">
       </form>
            <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="15">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="15">
+    <button type="submit">❤️ Wishlist</button>
+</form>
         </div>
     </div>
 
-    <div class="Watches">
+    <div class="Watches" onclick="location.href='productDetails.jsp?id=16'">
         <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQ3syisQYZC53GlcFnjLRK2I_thUhcPuGPAldJdhhcn4vS_b3o8v6bMTEwDJohYqgMhTS6clAoDL90gjipoVfLTP3XemroOM0e72tvqUDU" alt="Fastrack">
         <p>Fastrack Optimus 2 Pro Smartwatch</p>
         <p>₹2,499</p>
         <div class="button-container">
-               <form action="buy" method="post">
-        <input type="hidden" name="productId" value="16">
-        <button class="b1">BUY</button>
+               <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="16">
       </form>
           <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="16">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="16">
+    <button type="submit">❤️ Wishlist</button>
+</form>
         </div>
     </div>
 </div>
 
-<div class="box5">
-    <div class="Buds">
+<div class="box5" >
+    <div class="Buds" onclick="location.href='productDetails.jsp?id=17'">
         <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTcW5UYSj3Da2J9FuNwFZH_w7nMubkNGL498tYWXSJBCC75XgHx3vAhHgdgn5XlqA6j96QqrLfGTPDNhUayMAyQugQuDhM42606Iz4dCoOTJs6sCjeMWwUa" alt="Airpods">
         <p>Apple Airpods</p>
         <p>₹8,999</p>
         <div class="button-container">
-              <form action="buy" method="post">
-        <input type="hidden" name="productId" value="17">
-        <button class="b1">BUY</button>
+              <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="17">
       </form>
            <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="17">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="17">
+    <button type="submit">❤️ Wishlist</button>
+</form>
         </div>
     </div>
+    
 
-    <div class="Buds">
-        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSJMqfLjPN-kwdtnt4KTVGO2gv_1YOb7qMJkvjFgHdep_GO5XJdjegr7kvCtnPmOGjCbnFOayUM8IHz3hNYhJsfq2roRpn6jma6h3BjTgrdM-cRV-WRDqq14A" alt="Boult">
+    <div class="Buds" onclick="location.href='productDetails.jsp?id=18'">
+        <img src="https://s3bg.cashify.in/gpro/uploads/2024/06/25162613/boult-audio-mustang-torq-front.webp" alt="Boult">
         <p>Boult Audio Mustang Torq</p>
         <p>₹1,799</p>
         <div class="button-container">
-              <form action="buy" method="post">
-        <input type="hidden" name="productId" value="18">
-        <button class="b1">BUY</button>
+              <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="18">
       </form>
            <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="18">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="18">
+    <button type="submit">❤️ Wishlist</button>
+</form>
         </div>
     </div>
 
-    <div class="Buds">
+    <div class="Buds" onclick="location.href='productDetails.jsp?id=19'">
         <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS6z32ixOHBGZ3QuTirltE8IFvwaT83eZECh22c9LUGVk3Qa3HgWfIp06TqomNOOA9S9ZRQD1JhpD3jKYp2p48QVrnmbcd6_QdOO-YB95g" alt="Realme Buds">
         <p>Realme Buds T310</p>
         <p>₹2,199</p>
         <div class="button-container">
-              <form action="buy" method="post">
-        <input type="hidden" name="productId" value="19">
-        <button class="b1">BUY</button>
+              <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="19">
       </form>
            <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="19">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="19">
+    <button type="submit">❤️ Wishlist</button>
+</form>
         </div>
     </div>
 
-    <div class="Buds">
+    <div class="Buds" onclick="location.href='productDetails.jsp?id=20'">
         <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQVGijlUW_qkarCe5rot3RJ-8Ez9c04g8EijfWgaA6lmK_W8t1Y7fcA3CorXPG9yw3L6QH_7e80nz_5RC2aMQPDNNJ5J3Rm6LqafY0Yrpo" alt="OnePlus Buds">
         <p>OnePlus Buds Pro</p>
         <p>₹6,488</p>
         <div class="button-container">
-              <form action="buy" method="post">
-        <input type="hidden" name="productId" value="20">
-        <button class="b1">BUY</button>
+              <form action="addToCart" method="post"
+              onclick="event.stopPropagation();">
+
+            <input type="hidden" name="productId" value="20">
       </form>
            <form action="addToCart" method="post">
         <input type="hidden" name="productId" value="20">
         <button class="b2">ADD TO CART</button>
       </form>
+      <form action="wishlist" method="post">
+    <input type="hidden" name="productId" value="20">
+    <button type="submit">❤️ Wishlist</button>
+</form>
         </div>
     </div>
 </div>

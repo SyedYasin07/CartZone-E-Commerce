@@ -18,6 +18,18 @@ public class PaymentController extends HttpServlet {
 
 	    String pid = request.getParameter("productId");
 	    String address = request.getParameter("address");
+//	    String color = request.getParameter("color");
+//        String size = request.getParameter("size");
+//        String ram = request.getParameter("ram");
+//        String storage = request.getParameter("storage");
+//        String screenSize = request.getParameter("screenSize");
+
+        System.out.println("DEBUG productId = " + pid);
+//        System.out.println("DEBUG color = " + color);
+//        System.out.println("DEBUG size = " + size);
+//        System.out.println("DEBUG ram = " + ram);
+//        System.out.println("DEBUG storage = " + storage);
+//        System.out.println("DEBUG screenSize = " + screenSize);
 
 	    System.out.println("DEBUG productId = " + pid);
 
@@ -37,6 +49,11 @@ public class PaymentController extends HttpServlet {
 
 	    request.getSession().setAttribute("productId", productId); 
 	    request.getSession().setAttribute("address", address); 
+//	    request.getSession().setAttribute("color", color);
+//        request.getSession().setAttribute("size", size);
+//        request.getSession().setAttribute("ram", ram);
+//        request.getSession().setAttribute("storage", storage);
+//        request.getSession().setAttribute("screenSize", screenSize);
 	    request.getRequestDispatcher("Payment.jsp").forward(request, response);
 	}
 

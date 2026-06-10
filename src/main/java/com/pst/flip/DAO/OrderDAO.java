@@ -6,16 +6,15 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.pst.flip.DTO.DBConnection;
 import com.pst.flip.DTO.OrderDTO;
-import com.pst.util.DB.DBConnection;
 
 public class OrderDAO {
 		
 	
 		public void buy(OrderDTO orders) {
 			Connection con=DBConnection.getConnection();
-			String sql =
-"INSERT INTO flip.orders(user_id, address, product_id, payment_mode, order_status) VALUES (?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO orders(user_Id, Address, Product_Id, Payment_Mode, order_status, color, size, ram, storage, screen_size) VALUES (?,?,?,?,?,?,?,?,?,?)";
 			try {
 				PreparedStatement ps= con.prepareStatement(sql);
 //				ps.setInt(1, orders.getOrderId());
@@ -24,13 +23,19 @@ public class OrderDAO {
 				ps.setInt(3, orders.getProductId());
 				ps.setString(4, orders.getPaymentMode());
 				ps.setString(5, "PLACED");
+				ps.setString(6, orders.getColor());
+				ps.setString(7, orders.getSize());
+				ps.setString(8, orders.getRam());
+				ps.setString(9, orders.getStorage());
+				ps.setString(10, orders.getScreenSize());
+
 				ps.executeUpdate();
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
 		}
 		public void deleteOrder(int orderId) {
-		    String sql = "DELETE FROM flip.orders WHERE order_id = ?";
+		    String sql = "DELETE FROM orders WHERE order_id = ?";
 
 		    try (Connection con = DBConnection.getConnection();
 		         PreparedStatement ps = con.prepareStatement(sql)) {
@@ -45,11 +50,12 @@ public class OrderDAO {
 		public OrderDTO getOrderById(int orderId) {
 		    OrderDTO o = null;
 
-		    String sql = "SELECT o.order_id, p.name AS product_name,p.image AS product_image, o.Address, " +
-		                 "o.payment_mode, o.order_date, o.order_status " +
-		                 "FROM flip.orders o " +
-		                 "JOIN flip.products p ON o.product_id = p.id " +
-		                 "WHERE o.order_id = ?";
+		    String sql = "SELECT o.order_id, p.name AS product_name, p.image AS product_image, " +
+		             "o.Address, o.payment_mode, o.order_date, o.order_status, " +
+		             "o.color, o.size, o.ram, o.storage, o.screen_size " +
+		             "FROM orders o " +
+		             "JOIN products p ON o.product_id = p.id " +
+		             "WHERE o.order_id = ?";
 
 		    try (Connection con = DBConnection.getConnection();
 		         PreparedStatement ps = con.prepareStatement(sql)) {
@@ -68,6 +74,11 @@ public class OrderDAO {
 		            o.setOrderDate(rs.getString("order_date"));
 		            o.setOrderStatus(rs.getString("order_status"));
 		            o.setProductImage(rs.getString("product_image"));
+		            o.setColor(rs.getString("color"));
+		            o.setSize(rs.getString("size"));
+		            o.setRam(rs.getString("ram"));
+		            o.setStorage(rs.getString("storage"));
+		            o.setScreenSize(rs.getString("screen_size"));
 		        }
 
 		    } catch (Exception e) {
@@ -81,8 +92,8 @@ public class OrderDAO {
 
 		    String sql =    "SELECT o.order_id, p.name AS product_name, o.Address, " +
 		    	    "o.payment_mode, o.order_date, o.order_status " +
-		    	    "FROM flip.orders o " +
-		    	    "JOIN flip.products p ON o.product_id = p.id " +
+		    	    "FROM orders o " +
+		    	    "JOIN products p ON o.product_id = p.id " +
 		    	    "WHERE o.user_id = ?";
 
 		    try (Connection con = DBConnection.getConnection();
@@ -92,7 +103,6 @@ public class OrderDAO {
 
 		        try (ResultSet rs = ps.executeQuery()) {
 		            while (rs.next()) {
-						System.out.println("ROW FOUND");
 		                OrderDTO o = new OrderDTO();
 		                o.setOrderId(rs.getInt("order_id"));
 		                o.setProductName(rs.getString("product_name"));
@@ -102,9 +112,8 @@ public class OrderDAO {
 		                o.setOrderStatus(rs.getString("order_status"));
 
 
-
+// or .toString() if your DTO uses String
 		                list.add(o);
-						System.out.println(list.size());
 		            }
 		        }
 
@@ -114,7 +123,7 @@ public class OrderDAO {
 
 		    return list;
 		}
-
+			
 
 		
 }
