@@ -7,6 +7,8 @@ D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\CartActionContr
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\CustomerCareServlet.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\DeleteProductServlet.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\DeleteReviewServlet.java
+D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\LoginController.java
+D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\LogOutController.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\MyOrderController.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\NotificationServlet.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\OrderActionController.java
@@ -15,6 +17,7 @@ D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\PaymentControll
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\ProductController.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\ProductDetailsController.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\RaiseTicketController.java
+D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\RegisterController.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\RemoveWishlistServlet.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\ReviewDisplay.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\Controller\SearchController.java
@@ -30,6 +33,7 @@ D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\CartDAO.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\CustomerCareDAO.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\DeleteProduct.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\HelpDAO.java
+D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\LoginDao.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\NotificationDAO.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\OrderDAO.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\ProductDao.java
@@ -37,6 +41,7 @@ D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\ReviewDAO.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\SellerDao.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\TrackDAO.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\UpdateProduct.java
+D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DAO\userDao.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DTO\CartDTO.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DTO\CustomerCareDTO.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DTO\DBConnection.java
@@ -47,4 +52,5 @@ D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DTO\OrderDTO.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DTO\ReviewDTO.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DTO\SellerDto.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DTO\TrackDTO.java
+D:\git flip\Flipkart-Clone\src\main\java\com\pst\flip\DTO\userDto.java
 D:\git flip\Flipkart-Clone\src\main\java\com\pst\util\DB\DBConnection.java

@@ -1,9 +1,11 @@
 com\pst\flip\DTO\CartDTO.class
+com\pst\flip\Controller\LogOutController.class
 com\pst\flip\Controller\ViewSellerProductsServlet.class
 com\pst\flip\Controller\AddToCartController.class
 com\pst\flip\DAO\UpdateProduct.class
 com\pst\flip\DTO\ReviewDTO.class
 com\pst\flip\DTO\Flipkart_Dto.class
+com\pst\flip\DTO\userDto.class
 com\pst\flip\Controller\WishlistController.class
 com\pst\flip\DTO\CustomerCareDTO.class
 com\pst\flip\DTO\DBConnection.class
@@ -12,6 +14,7 @@ com\pst\flip\DAO\CartDAO.class
 com\pst\flip\Controller\ProductController.class
 com\pst\flip\DTO\SellerDto.class
 com\pst\flip\Controller\NotificationServlet.class
+com\pst\flip\Controller\LoginController.class
 com\pst\flip\Controller\SellerRegisterServlet.class
 com\pst\flip\Controller\DeleteProductServlet.class
 com\pst\flip\Controller\ViewWishlistController.class
@@ -22,6 +25,7 @@ com\pst\flip\Controller\SellerLoginServlet.class
 com\pst\flip\DAO\NotificationDAO.class
 com\pst\flip\Controller\UpdateProductServlet.class
 com\pst\flip\DTO\NotificationDTO.class
+com\pst\flip\DAO\userDao.class
 com\pst\util\DB\DBConnection.class
 com\pst\flip\Controller\ReviewDisplay.class
 com\pst\flip\Controller\ProductDetailsController.class
@@ -37,10 +41,12 @@ com\pst\flip\Controller\CustomerCareServlet.class
 com\pst\flip\DTO\TrackDTO.class
 com\pst\flip\Controller\BuyController.class
 com\pst\flip\DTO\HelpDTO.class
+com\pst\flip\DAO\LoginDao.class
 com\pst\flip\DAO\DeleteProduct.class
 com\pst\flip\DAO\HelpDAO.class
 com\pst\flip\Controller\TrackOrderController.class
 com\pst\flip\Controller\MyOrderController.class
+com\pst\flip\Controller\RegisterController.class
 com\pst\flip\DAO\SellerDao.class
 com\pst\flip\Controller\OrderController.class
 com\pst\flip\Controller\RaiseTicketController.class

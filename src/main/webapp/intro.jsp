@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flikart Clone</title>
+    <link rel="icon"href="<%=request.getContextPath()%>/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -787,15 +788,24 @@
         <ul>
        
    
-		<li class="account-dropdown">
+	   <li>
+    Welcome <%= user.getName() %>
+</li>
+
+<li class="account-dropdown">
     <a href="#" class="account-link">
         My Account
         <i class="fa-solid fa-caret-down"></i>
     </a>
-    <ul class="dropdown-menu">
-       <li><a href="myOrders">📦 My Orders</a></li>
 
-<li><a href="viewCart">🛒 My Cart</a></li>
+    <ul class="dropdown-menu">
+
+        <li><a href="myOrders">📦 My Orders</a></li>
+
+        <li><a href="viewCart">🛒 My Cart</a></li>
+
+        <li><a href="logout">🚪 Logout</a></li>
+
     </ul>
 </li>
 
