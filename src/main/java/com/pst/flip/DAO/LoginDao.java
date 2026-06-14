@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import com.pst.flip.DTO.DBConnection;
 import com.pst.flip.DTO.userDto;
+import com.pst.util.DB.DBConnection;
 
 public class LoginDao {
 	public userDto loginUser(String email, String password) {
@@ -31,7 +31,9 @@ public class LoginDao {
 	            user.setAddress(rs.getString("address"));
 
 	            return user;
-	        }
+	        }else{
+				System.out.println("UserNotFound");
+			}
 
 	    } catch(Exception e) {
 	        e.printStackTrace();
