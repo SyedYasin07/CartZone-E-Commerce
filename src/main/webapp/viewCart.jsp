@@ -6,6 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/ico" href="images/favicon.ico">
 <title>viewing cart</title>
 <style>
 body {

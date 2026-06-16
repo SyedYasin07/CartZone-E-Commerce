@@ -11,6 +11,7 @@ Flipkart_Dto product =
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/ico" href="images/favicon.ico">
 <title>Product details</title>
 
 <style>

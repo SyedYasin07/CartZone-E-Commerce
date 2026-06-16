@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/ico" href="images/favicon.ico">
 <title>Seller Login</title>
 </head>
 <style>*{

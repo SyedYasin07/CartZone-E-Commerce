@@ -14,6 +14,7 @@ String msg=(String)request.getAttribute("message");
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" type="image/ico" href="images/favicon.ico">
 <title>Search Results</title>
 
 <style>
