@@ -61,18 +61,15 @@ if(user == null) {
     .logo p span{
         color: rgb(255, 191, 0);
     }
-    .flip
-    {
-      width: auto;
-        height: 40%;
-       margin: 0 10px;
-        
-    }
-    .flip img{
-        margin-bottom: 30px;
-        object-fit: contain;
+       .flip{
+    margin: 0 10px;
+} 
 
-    }
+  .flip img{
+    height: 50px;
+    width: auto;
+    display: block;
+}
     .box{
         position: relative;
         display: flex;
