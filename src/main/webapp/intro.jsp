@@ -16,11 +16,14 @@ if(user == null) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="images/zone.png">
-    <title>CartZone</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+   <link rel="icon" type="image/png" href="images/zone.png">
+        <title>Flikart Clone</title>
+ 
+ <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
+ 
+<!-- <img src="images/zone.png" alt="CartZone Logo"> -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> 
 <style>
     *{
         margin: 0%;
@@ -28,7 +31,18 @@ if(user == null) {
         box-sizing: border-box;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-       nav{
+   /*  nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        background-color: blue;
+        color: white;
+        width: 100%;
+        height: 55px;
+        padding: 0 20px;
+    } */
+    nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -61,7 +75,7 @@ if(user == null) {
     .logo p span{
         color: rgb(255, 191, 0);
     }
-       .flip{
+     .flip{
     margin: 0 10px;
 } 
 
@@ -75,7 +89,8 @@ if(user == null) {
         display: flex;
         align-items: center;
       
-    }
+    } 
+ 
     .box input{
         width:300px;
         height:35px;
@@ -416,6 +431,7 @@ nav ul li a:hover{
 }
           @media (max-width: 480px) {
     .logo {
+    display:flex;
         flex-direction: row;
         align-items: center;
         gap: 6px;
@@ -870,22 +886,19 @@ nav ul li a:hover{
         border-color: transparent;
     }
 }
-
 </style>
 </head>
 <body>
     <nav>
        <div class="logo">
-         <div class="flip"><img src="images/zone.png" alt="logo"></div>
-           <span class="cartzone-text">CartZone</span>
+        <div class="flip"><img src="images/zone.png" alt="logo"></div>
+          <span class="cartzone-text">CartZone</span>
            <p class="cartzone-text2">Cart<span>plus</span></p>
         </div>
-
      <form action="searchProduct" method="get"> <div class="box"> <input type="text" name="keyword" placeholder="Search Product & More..." id="search"> <button type="submit" style="border:none;background:none;cursor:pointer;"> <i class="fa-solid fa-magnifying-glass"></i> </button> </div> </form>
         <ul>
        
-   
-	   <li>
+   <li>
     Welcome <%= user.getName() %>
 </li>
 
@@ -991,7 +1004,7 @@ nav ul li a:hover{
            
              <a href="#"><img alt="Appli" src="images/appli.jpeg">Appliances</a>
             </div>
-<img src="images/zone.png" alt="interact">
+<img src="images/flip.png" alt="interact">
 <div class="container">
     <div class="card"  onclick="location.href='productDetails.jsp?id=1'">
         <img src="https://rukminim1.flixcart.com/image/312/312/l4rd0280/t-shirt/l/n/s/s-402a-austiz-original-imagfh4fmsjbsy69.jpeg?q=70" alt="w">
