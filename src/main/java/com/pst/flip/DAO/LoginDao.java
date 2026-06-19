@@ -10,7 +10,7 @@ import com.pst.util.DB.DBConnection;
 public class LoginDao {
 	public userDto loginUser(String email, String password) {
 
-	    String sql = "SELECT * FROMusers WHERE email=? AND password=?";
+	    String sql = "SELECT * FROM users WHERE email=? AND password=?";
 
 	    try(Connection con = DBConnection.getConnection();
 	        PreparedStatement ps = con.prepareStatement(sql)) {
