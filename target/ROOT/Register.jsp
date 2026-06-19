@@ -4,9 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/ico" href="images/favicon.ico">
-<link rel="icon" type="image/ico" href="images/favicon.ico">
-<title>Flipkart Clone - Register</title>
+<link rel="icon" type="image/png" href="images/zone.png">
+<title>CartZone - Register</title>
 <!-- Bootstrap 5 -->
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
@@ -213,7 +212,7 @@ body {
         <!-- LEFT SIDE -->
         <div class="col-md-5 left-panel">
 
-            <img src="images/flipkart.png" class="logo" alt="Flipkart Logo">
+            <img src="images/zone.png" class="logo" alt="CartZone Logo">
 
             <h1>Looks like you're new here!</h1>
 

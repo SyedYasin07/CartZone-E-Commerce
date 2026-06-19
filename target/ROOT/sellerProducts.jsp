@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/ico" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/zone.png">
 <title>SellProduct</title>
 </head>
 <style>*{
@@ -137,17 +137,17 @@ hr{
 }</style>
 <body>
 <%@ page import="java.util.List" %>
-<%@ page import="com.pst.flip.DTO.Flipkart_Dto" %>
+<%@ page import="com.pst.flip.DTO.CartZone_Dto" %>
 
 <%
-List<Flipkart_Dto> products =
-(List<Flipkart_Dto>) request.getAttribute("products");
+List<CartZone_Dto> products =
+(List<CartZone_Dto>) request.getAttribute("products");
 %>
 
 <h1>My Products</h1>
 
 <%
-for(Flipkart_Dto p : products){
+for(CartZone_Dto p : products){
 %>
 
 <div>

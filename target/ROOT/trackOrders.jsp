@@ -11,7 +11,7 @@ List<OrderDTO> orders =
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/ico" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/zone.png">
 <title>Track Orders</title>
 
 <style>

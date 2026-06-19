@@ -10,7 +10,7 @@
 //import java.io.IOException;
 //
 //import com.pst.flip.DAO.ProductDao;
-//import com.pst.flip.DTO.Flipkart_Dto;
+//import com.pst.flip.DTO.CartZone_Dto;
 //
 //
 //@WebServlet("/AddProductServlet")
@@ -22,7 +22,7 @@
 //		HttpSession session = request.getSession(false);
 //		int sellerId = (int) session.getAttribute("sellerId"); // temporary
 //
-//		Flipkart_Dto dto = new Flipkart_Dto();
+//		CartZone_Dto dto = new CartZone_Dto();
 //
 //		dto.setName(request.getParameter("name"));
 //		dto.setPrice(
@@ -45,6 +45,11 @@
 //}
 package com.pst.flip.Controller;
 
+import java.io.IOException;
+
+import com.pst.flip.DAO.ProductDao;
+import com.pst.flip.DTO.CartZone_Dto;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -52,10 +57,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-import java.io.IOException;
-
-import com.pst.flip.DAO.ProductDao;
-import com.pst.flip.DTO.Flipkart_Dto;
 
 @WebServlet("/AddProductServlet")
 public class AddProductServlet extends HttpServlet {
@@ -77,7 +78,7 @@ public class AddProductServlet extends HttpServlet {
         int sellerId = (Integer) session.getAttribute("sellerId");
 
         // 📦 Create DTO
-        Flipkart_Dto dto = new Flipkart_Dto();
+        CartZone_Dto dto = new CartZone_Dto();
         dto.setName(request.getParameter("name"));
         dto.setPrice(Double.parseDouble(request.getParameter("price")));
         dto.setImage(request.getParameter("image"));

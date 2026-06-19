@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/ico" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/zone.png">
 <title>My Orders</title>
 
 <style>

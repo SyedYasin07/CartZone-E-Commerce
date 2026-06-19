@@ -1,9 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="com.pst.flip.DTO.Flipkart_Dto" %>
+<%@ page import="com.pst.flip.DTO.CartZone_Dto" %>
 
 <%
-Flipkart_Dto product =
-        (Flipkart_Dto) request.getAttribute("product");
+CartZone_Dto product =
+        (CartZone_Dto) request.getAttribute("product");
 %>
 <!DOCTYPE html>
 <html>
@@ -11,7 +11,7 @@ Flipkart_Dto product =
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/ico" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/zone.png">
 <title>Product details</title>
 
 <style>

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/ico" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/zone.png">
 <title>Contact Us</title>
 
 <style>
@@ -118,7 +118,7 @@ body{
                 <div class="icon">📧</div>
                 <div class="title">Email</div>
                 <div class="info">
-                    support@flipkartclone.com
+                    support@cartzone.com
                 </div>
             </div>
 

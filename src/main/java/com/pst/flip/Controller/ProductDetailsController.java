@@ -1,14 +1,16 @@
 package com.pst.flip.Controller;
 
+import java.io.IOException;
+
+import com.pst.flip.DAO.ProductDao;
+import com.pst.flip.DTO.CartZone_Dto;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-import com.pst.flip.DAO.ProductDao;
-import com.pst.flip.DTO.Flipkart_Dto;
 
 @WebServlet("/productDetails")
 public class ProductDetailsController extends HttpServlet {
@@ -21,7 +23,7 @@ public class ProductDetailsController extends HttpServlet {
 
         ProductDao dao = new ProductDao();
 
-        Flipkart_Dto product = dao.getProductById(id);
+        CartZone_Dto product = dao.getProductById(id);
 
         request.setAttribute("product", product);
 

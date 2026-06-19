@@ -16,9 +16,8 @@ if(user == null) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/ico" href="images/favicon.ico">
-    <title>Flikart Clone</title>
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="icon" type="image/png" href="images/zone.png">
+    <title>CartZone</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -29,17 +28,25 @@ if(user == null) {
         box-sizing: border-box;
         font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
-    nav{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        position: fixed;
-        background-color: blue;
-        color: white;
-        width: 100%;
-        height: 55px;
-        padding: 0 20px;
-    }
+       nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 70px;
+    padding: 0 25px;
+
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+
+    color: white;
+    z-index: 1000;
+}
     .logo {
         display: flex;
         align-items: center;
@@ -89,22 +96,27 @@ if(user == null) {
         cursor: pointer;
     }
 
-    nav ul{
-        display: flex;
-        align-items: center;
-        list-style: none;
-        gap: 20px;
-    }
-    nav ul li a{
-     text-decoration: none;
-     color:white;
-     font-size: 16px;
-     transition: 0.3s;
-    }
-    nav ul li a:hover{
-        color:gray;
-        border-bottom: 2px solid white;
-    }
+   nav ul{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #f8fafc;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all .3s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+nav ul li a:hover{
+    background: rgba(255,140,0,0.15);
+    color: #ff8c00;
+}
     .categories{
         display: flex;
         justify-content: center;
@@ -786,15 +798,90 @@ if(user == null) {
 .more-dropdown:hover .dropdown-menu2{
     display:block;
 }
+.cartzone-text{
+    font-size: 32px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    animation: glow 2s infinite alternate;
+}
+
+.cartzone-text span{
+    color: #ff9f00;
+}
+
+@keyframes glow{
+    from{
+        text-shadow: 0 0 5px #fff,
+                     0 0 10px #ff9f00;
+    }
+    to{
+        text-shadow: 0 0 10px #fff,
+                     0 0 20px #ff9f00,
+                     0 0 30px #ff9f00;
+    }
+}
+.cartzone-text2{
+    font-size: 32px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #ff9f00;
+
+    width: 0;
+    animation: typing 3s steps(8,end) infinite,
+               blink 0.7s infinite;
+} 
+
+.cartzone-text2{
+    width: 190px;          /* fixed width */
+    font-size: 32px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    margin: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #ff9f00;
+
+    animation: typing 3s steps(8,end) infinite,
+               blink .7s infinite;
+}
+
+@keyframes typing{
+    from{
+        clip-path: inset(0 100% 0 0);
+    }
+    to{
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes blink{
+    50%{
+        border-color: transparent;
+    }
+}
 
 </style>
 </head>
 <body>
     <nav>
        <div class="logo">
-        <div class="flip"><img src="https://static.vecteezy.com/system/resources/previews/054/650/802/non_2x/flipkart-logo-rounded-flipkart-logo-free-download-flipkart-logo-free-png.png" alt="logo"></div>
-            <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/flipkart-plus_8d85f4.png" alt="shirt">
-            <p>Flipkart <span>plus</span></p>
+         <div class="flip"><img src="images/zone.png" alt="logo"></div>
+           <span class="cartzone-text">CartZone</span>
+           <p class="cartzone-text2">Cart<span>plus</span></p>
         </div>
 
      <form action="searchProduct" method="get"> <div class="box"> <input type="text" name="keyword" placeholder="Search Product & More..." id="search"> <button type="submit" style="border:none;background:none;cursor:pointer;"> <i class="fa-solid fa-magnifying-glass"></i> </button> </div> </form>
@@ -907,7 +994,7 @@ if(user == null) {
            
              <a href="#"><img alt="Appli" src="images/appli.jpeg">Appliances</a>
             </div>
-<img src="images/flip.png" alt="interact">
+<img src="images/zone.png" alt="interact">
 <div class="container">
     <div class="card"  onclick="location.href='productDetails.jsp?id=1'">
         <img src="https://rukminim1.flixcart.com/image/312/312/l4rd0280/t-shirt/l/n/s/s-402a-austiz-original-imagfh4fmsjbsy69.jpeg?q=70" alt="w">
@@ -1347,7 +1434,7 @@ if(user == null) {
       <a href="#">Contact Us</a>
       <a href="#">About Us</a>
       <a href="#">Careers</a>
-      <a href="#">FlipKart Stories</a>
+      <a href="#">CartZone Stories</a>
       <a href="#">Press</a>
       <a href="#">Corporate Information</a>
     </div>
@@ -1357,7 +1444,7 @@ if(user == null) {
       <a href="#">Payments</a>
       <a href="#">Shipping</a>
       <a href="#">Cancellation & Returns</a>
-      <a href="#">FlipKart Stories</a>
+      <a href="#">CartZone Stories</a>
       <a href="#">FAQ</a>
       <a href="#">Report Infringement</a>
     </div>
@@ -1384,7 +1471,7 @@ if(user == null) {
 <div class="fa">
 <div>
 <h3>Mail Us:</h3>
-<p>FlipKart Internet Private Limited</p>
+<p>CartZone Internet Private Limited</p>
 <p>Buildings Alyssa, Begonia &</p>
 <p>Clove Embassy Tech Vilage</p>
 <p>Outer Ring Road, Devarabeesanahalli Village</p>
@@ -1393,7 +1480,7 @@ if(user == null) {
 </div>
 <div>
 	<h3>Registered Office Address:</h3>
-<p>FlipKart Internet Private Limited</p>
+<p>CartZone Internet Private Limited</p>
 <p>Buildings Alyssa, Begonia &</p>
 <p>Clove Embassy Tech Vilage</p>
 <p>Outer Ring Road, Devarabeesanahalli Village</p>
@@ -1404,7 +1491,7 @@ if(user == null) {
 </div>
 </div>
 <div class="fb">
-<p>@ 2007-2026 FlipKart.com</p>
+<p>@ 2007-2026 CartZone.com</p>
 <img src="https://img.icons8.com/color/48/000000/visa.png" alt="visa">
 <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" alt="mastercard">
 <img src="https://img.icons8.com/color/48/000000/amex.png" alt="amex">

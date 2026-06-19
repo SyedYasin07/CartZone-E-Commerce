@@ -1,23 +1,25 @@
 package com.pst.flip.DAO;
 
-import com.pst.flip.DTO.Flipkart_Dto;
-import com.pst.util.DB.DBConnection;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.pst.flip.DTO.CartZone_Dto;
+import com.pst.util.DB.DBConnection;
+
 public class ProductDao {
 
-    public List<Flipkart_Dto> getAllProducts() {
-        List<Flipkart_Dto> list = new ArrayList<>();
+    public List<CartZone_Dto> getAllProducts() {
+        List<CartZone_Dto> list = new ArrayList<>();
 
         try (Connection con = DBConnection.getConnection();
              PreparedStatement ps = con.prepareStatement("SELECT * FROM products");
              ResultSet rs = ps.executeQuery()) {
 
             while (rs.next()) {
-                Flipkart_Dto p = new Flipkart_Dto();
+                CartZone_Dto p = new CartZone_Dto();
                 p.setId(rs.getInt("id"));
                 p.setName(rs.getString("name"));
                 p.setPrice(rs.getDouble("price"));
@@ -38,9 +40,9 @@ public class ProductDao {
         }
         return list;
     }
-    public List<Flipkart_Dto> getProductsBySeller(int sellerId){
+    public List<CartZone_Dto> getProductsBySeller(int sellerId){
 
-        List<Flipkart_Dto> list = new ArrayList<>();
+        List<CartZone_Dto> list = new ArrayList<>();
 
         String sql =
         "SELECT * FROM products WHERE seller_id=?";
@@ -54,7 +56,7 @@ public class ProductDao {
 
             while(rs.next()){
 
-            	Flipkart_Dto dto = new Flipkart_Dto();
+            	CartZone_Dto dto = new CartZone_Dto();
 
                 dto.setId(rs.getInt("id"));
                 dto.setName(rs.getString("name"));
@@ -77,7 +79,7 @@ public class ProductDao {
 
         return list;
     }
-    public void addProduct(Flipkart_Dto dto) {
+    public void addProduct(CartZone_Dto dto) {
 
         String sql = "INSERT INTO products(name, price, image, category, seller_id) VALUES(?,?,?,?,?)";
 
@@ -141,9 +143,9 @@ e.printStackTrace();
 
 return false;
 }
-    public List<Flipkart_Dto> searchProducts(String keyword){
+    public List<CartZone_Dto> searchProducts(String keyword){
 
-        List<Flipkart_Dto> list =
+        List<CartZone_Dto> list =
                 new ArrayList<>();
 
         String sql =
@@ -162,8 +164,8 @@ return false;
 
             while(rs.next()){
 
-            	Flipkart_Dto p =
-                        new Flipkart_Dto();
+            	CartZone_Dto p =
+                        new CartZone_Dto();
 
                 p.setId(rs.getInt("id"));
                 p.setName(rs.getString("name"));
@@ -186,9 +188,9 @@ return false;
 
         return list;
     }
-    public List<Flipkart_Dto> getProductsByCategory(String category){
+    public List<CartZone_Dto> getProductsByCategory(String category){
 
-        List<Flipkart_Dto> list = new ArrayList<>();
+        List<CartZone_Dto> list = new ArrayList<>();
 
         String sql =
             "SELECT * FROM products WHERE category=?";
@@ -202,7 +204,7 @@ return false;
 
             while(rs.next()){
 
-                Flipkart_Dto p = new Flipkart_Dto();
+                CartZone_Dto p = new CartZone_Dto();
 
                 p.setId(rs.getInt("id"));
                 p.setName(rs.getString("name"));
@@ -224,9 +226,9 @@ return false;
 
         return list;
     }
-    public Flipkart_Dto getProductById(int id) {
+    public CartZone_Dto getProductById(int id) {
 
-        Flipkart_Dto p = null;
+        CartZone_Dto p = null;
 
         String sql = "SELECT * FROM products WHERE id=?";
 
@@ -239,7 +241,7 @@ return false;
 
             if(rs.next()) {
 
-                p = new Flipkart_Dto();
+                p = new CartZone_Dto();
 
                 p.setId(rs.getInt("id"));
                 p.setName(rs.getString("name"));

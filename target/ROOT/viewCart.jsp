@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/ico" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/zone.png">
 <title>viewing cart</title>
 <style>
 body {
@@ -215,15 +215,17 @@ for (CartDTO c : cart) {
            value="<%=c.getProductId()%>">
 
     <button
-        style="background:#fb641b;
-               color:white;
-               border:none;
-               border-radius:5px;
-               cursor:pointer;">
+    style="background:#fb641b;
+           color:white;
+           border:none;
+           border-radius:5px;
+           cursor:pointer;
+           padding:15px 40px;
+           font-size:18px;">
 
-        Buy Now
+    Buy Now
 
-    </button>
+</button>
 
 </form>
     <!-- DELETE BUTTON -->

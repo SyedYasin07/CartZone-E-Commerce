@@ -1,7 +1,10 @@
 package com.pst.flip.Controller;
 
-import com.pst.flip.DTO.Flipkart_Dto;
+import java.io.IOException;
+import java.util.List;
+
 import com.pst.flip.DAO.ProductDao;
+import com.pst.flip.DTO.CartZone_Dto;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -9,9 +12,6 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
-import java.io.IOException;
-import java.util.List;
 @WebServlet("/ProductController")
 public class ProductController extends HttpServlet {
 
@@ -20,7 +20,7 @@ public class ProductController extends HttpServlet {
             throws ServletException, IOException {
 
         ProductDao dao = new ProductDao();
-        List<Flipkart_Dto> products = dao.getAllProducts();
+        List<CartZone_Dto> products = dao.getAllProducts();
 
         req.setAttribute("products", products);
         RequestDispatcher rd = req.getRequestDispatcher("intro.jsp");

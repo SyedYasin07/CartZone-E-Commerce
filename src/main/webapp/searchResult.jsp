@@ -1,10 +1,10 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
-<%@page import="com.pst.flip.DTO.Flipkart_Dto"%>
+<%@page import="com.pst.flip.DTO.CartZone_Dto"%>
 
 <%
-List<Flipkart_Dto> products =
-(List<Flipkart_Dto>)request.getAttribute("products");
+List<CartZone_Dto> products =
+(List<CartZone_Dto>)request.getAttribute("products");
 
 String msg=(String)request.getAttribute("message");
 %>
@@ -14,7 +14,7 @@ String msg=(String)request.getAttribute("message");
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="icon" type="image/ico" href="images/favicon.ico">
+<link rel="icon" type="image/png" href="images/zone.png">
 <title>Search Results</title>
 
 <style>
@@ -211,7 +211,7 @@ body{
 <body>
 
 <div class="header">
-    <div class="logo">Flipkart Clone</div>
+    <div class="logo">CartZone</div>
     <div class="search-title">Search Results</div>
 </div>
 
@@ -239,7 +239,7 @@ if(products!=null && !products.isEmpty()){
 <div class="product-grid">
 
 <%
-for(Flipkart_Dto p : products){
+for(CartZone_Dto p : products){
 %>
 
 <div class="card">

@@ -4,11 +4,9 @@ com\pst\flip\Controller\ViewSellerProductsServlet.class
 com\pst\flip\Controller\AddToCartController.class
 com\pst\flip\DAO\UpdateProduct.class
 com\pst\flip\DTO\ReviewDTO.class
-com\pst\flip\DTO\Flipkart_Dto.class
 com\pst\flip\DTO\userDto.class
 com\pst\flip\Controller\WishlistController.class
 com\pst\flip\DTO\CustomerCareDTO.class
-com\pst\flip\DTO\DBConnection.class
 com\pst\flip\Controller\OrderActionController.class
 com\pst\flip\DAO\CartDAO.class
 com\pst\flip\Controller\ProductController.class
@@ -37,6 +35,7 @@ com\pst\flip\Controller\DeleteReviewServlet.class
 com\pst\flip\DAO\OrderDAO.class
 com\pst\flip\DAO\CustomerCareDAO.class
 com\pst\flip\Controller\AddReviewServlet.class
+com\pst\flip\DTO\CartZone_Dto.class
 com\pst\flip\Controller\CustomerCareServlet.class
 com\pst\flip\DTO\TrackDTO.class
 com\pst\flip\Controller\BuyController.class

@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.util.List;
 
 import com.pst.flip.DAO.ProductDao;
-import com.pst.flip.DTO.Flipkart_Dto;
+import com.pst.flip.DTO.CartZone_Dto;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.*;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/searchProduct")
 public class SearchController extends HttpServlet {
@@ -23,7 +25,7 @@ public class SearchController extends HttpServlet {
         ProductDao dao =
                 new ProductDao();
 
-        List<Flipkart_Dto> products =
+        List<CartZone_Dto> products =
                 dao.searchProducts(keyword);
         if(products.isEmpty()){
             products = dao.getProductsByCategory("Mobile");
