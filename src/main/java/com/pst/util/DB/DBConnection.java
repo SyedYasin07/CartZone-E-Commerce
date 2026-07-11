@@ -45,9 +45,9 @@ public class DBConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                "jdbc:mysql://shuttle.proxy.rlwy.net:39720/railway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
-                "root",
-                "awsYxCKkaHAtWDuAftCnfuxWTpnXFruL"
+                "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/flip?sslMode=VERIFY_IDENTITY",
+                "2EQjPBpUxoPoZg7.root",
+                "cm1Tu7pzjPnSqp7L"
             );
 
             System.out.println("✅ DB Connected");
