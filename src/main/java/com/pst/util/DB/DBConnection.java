@@ -45,7 +45,7 @@ public class DBConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             con = DriverManager.getConnection(
-                "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/flip?sslMode=VERIFY_IDENTITY",
+                "jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/flip?sslMode=REQUIRED&enabledTLSProtocols=TLSv1.2",
                 "2EQjPBpUxoPoZg7.root",
                 "LRGirU0t6adfN74N"
             );
