@@ -16,6 +16,16 @@ A feature-rich **CartZone E-Commerce Platform** developed using **Java, JSP, Ser
 
 https://cartzone-e-commerce.onrender.com/Login.jsp
 
+# 🔐 Demo Login Credentials
+
+Use the following **demo credentials** to access the deployed CartZone application.
+
+### 👤 Customer Login
+
+```text
+Email: yasin567@gmail.com
+Password: yasin4757
+
 ---
 
 # 📖 Project Overview
